@@ -1,0 +1,145 @@
+import { curveFromShape, veh } from "./helpers";
+import type { EvVehicle } from "../types";
+
+const NISSAN: EvVehicle[] = [
+  veh({
+    id: "nissan-leaf-40-2023",
+    make: "Nissan",
+    model: "Leaf",
+    trim: "40 kWh",
+    year: 2023,
+    batteryCapacityKWh: 39,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 50,
+    acEfficiency: 0.86,
+    dcEfficiency: 0.91,
+    idleOverheadKW: 0.2,
+    dcChargingCurve: curveFromShape(50, "slowLegacy"),
+  }),
+  veh({
+    id: "nissan-leaf-e-plus-2023",
+    make: "Nissan",
+    model: "Leaf",
+    trim: "e+ SV",
+    year: 2023,
+    batteryCapacityKWh: 59,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 100,
+    acEfficiency: 0.87,
+    dcEfficiency: 0.92,
+    idleOverheadKW: 0.25,
+    dcChargingCurve: curveFromShape(100, "slowLegacy"),
+  }),
+  veh({
+    id: "nissan-ariya-63-2023",
+    make: "Nissan",
+    model: "Ariya",
+    trim: "63 kWh FWD",
+    year: 2023,
+    batteryCapacityKWh: 63,
+    acMaxPowerKW: 7.4,
+    dcMaxPowerKW: 130,
+    acEfficiency: 0.88,
+    dcEfficiency: 0.93,
+    idleOverheadKW: 0.35,
+    dcChargingCurve: curveFromShape(130, "gradualTaper"),
+  }),
+  veh({
+    id: "nissan-ariya-87-e4orce-2023",
+    make: "Nissan",
+    model: "Ariya",
+    trim: "87 kWh e-4ORCE AWD",
+    year: 2023,
+    batteryCapacityKWh: 87,
+    acMaxPowerKW: 7.4,
+    dcMaxPowerKW: 130,
+    acEfficiency: 0.88,
+    dcEfficiency: 0.93,
+    idleOverheadKW: 0.45,
+    dcChargingCurve: curveFromShape(130, "gradualTaper"),
+  }),
+];
+
+const TOYOTA: EvVehicle[] = [
+  veh({
+    id: "toyota-bz4x-fwd-2024",
+    make: "Toyota",
+    model: "bZ4X",
+    trim: "FWD",
+    year: 2024,
+    batteryCapacityKWh: 71.4,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 150,
+    acEfficiency: 0.87,
+    dcEfficiency: 0.92,
+    idleOverheadKW: 0.35,
+    dcChargingCurve: curveFromShape(150, "slowLegacy"),
+  }),
+  veh({
+    id: "toyota-bz4x-awd-2024",
+    make: "Toyota",
+    model: "bZ4X",
+    trim: "AWD",
+    year: 2024,
+    batteryCapacityKWh: 71.4,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 150,
+    acEfficiency: 0.87,
+    dcEfficiency: 0.92,
+    idleOverheadKW: 0.4,
+    dcChargingCurve: curveFromShape(150, "slowLegacy"),
+  }),
+];
+
+const MAZDA: EvVehicle[] = [
+  veh({
+    id: "mazda-mx30-2023",
+    make: "Mazda",
+    model: "MX-30",
+    trim: "EV",
+    year: 2023,
+    batteryCapacityKWh: 35.5,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 50,
+    acEfficiency: 0.86,
+    dcEfficiency: 0.91,
+    idleOverheadKW: 0.2,
+    dcChargingCurve: curveFromShape(50, "slowLegacy"),
+  }),
+];
+
+const LEXUS: EvVehicle[] = [
+  veh({
+    id: "lexus-rz450e-2024",
+    make: "Lexus",
+    model: "RZ",
+    trim: "450e",
+    year: 2024,
+    batteryCapacityKWh: 71.4,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 150,
+    acEfficiency: 0.88,
+    dcEfficiency: 0.93,
+    idleOverheadKW: 0.4,
+    dcChargingCurve: curveFromShape(150, "slowLegacy"),
+  }),
+];
+
+const HONDA: EvVehicle[] = [
+  veh({
+    id: "honda-e-2022",
+    make: "Honda",
+    model: "e",
+    trim: "Advance",
+    year: 2022,
+    batteryCapacityKWh: 35.5,
+    acMaxPowerKW: 6.6,
+    dcMaxPowerKW: 50,
+    acEfficiency: 0.86,
+    dcEfficiency: 0.91,
+    idleOverheadKW: 0.2,
+    dcChargingCurve: curveFromShape(50, "slowLegacy"),
+  }),
+];
+
+export const JAPANESE_VEHICLES: EvVehicle[] = [...NISSAN, ...TOYOTA, ...MAZDA, ...LEXUS, ...HONDA];

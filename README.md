@@ -18,9 +18,13 @@ mobile and desktop.
 
 ## Features
 
-- Vehicle database with battery capacity, AC/DC max power, efficiency,
-  idle/overhead draw, and a DC fast-charging power curve per vehicle
-  (`src/data/vehicles.ts`).
+- Vehicle database (91 trims across 31 brands, in `src/data/vehicleData/`)
+  with battery capacity, AC/DC max power, efficiency, idle/overhead draw, and
+  a DC fast-charging power curve per vehicle. Weighted toward Singapore's EV
+  population (LTA registrations) and deep Chinese-brand coverage — BYD alone
+  spans 13 trims (Atto 3, Dolphin, Seal, Seal U, Sealion 7, Song Plus/L,
+  Tang, Han, e6), plus MG, GWM/Ora, XPeng, Zeekr, Nio, and Wuling — alongside
+  Tesla, Hyundai/Kia, and the common European/Japanese/American models.
 - Updatable vehicle DB: the app fetches `public/vehicle-db.json` at startup
   and merges in anything newer than what shipped in the bundle, so specs can
   be refreshed without an app release. See `scripts/update-vehicle-db.mjs`

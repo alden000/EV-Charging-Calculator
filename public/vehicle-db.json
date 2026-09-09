@@ -1,43 +1,470 @@
 {
-  "version": "2026.01.0",
+  "version": "2026.09.0",
   "updatedAt": "2026-09-09",
   "vehicles": [
     {
-      "id": "tesla-model-3-rwd-2024",
-      "make": "Tesla",
-      "model": "Model 3",
-      "trim": "RWD (LFP)",
+      "id": "byd-atto3-sr-2024",
+      "make": "BYD",
+      "model": "Atto 3",
+      "trim": "Standard Range",
       "year": 2024,
-      "batteryCapacityKWh": 57.5,
+      "batteryCapacityKWh": 49.9,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 80,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40
+        },
+        {
+          "soc": 10,
+          "kw": 76
+        },
+        {
+          "soc": 20,
+          "kw": 80
+        },
+        {
+          "soc": 30,
+          "kw": 80
+        },
+        {
+          "soc": 40,
+          "kw": 76
+        },
+        {
+          "soc": 50,
+          "kw": 68
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 48
+        },
+        {
+          "soc": 80,
+          "kw": 36
+        },
+        {
+          "soc": 90,
+          "kw": 24
+        },
+        {
+          "soc": 100,
+          "kw": 12
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-atto3-er-2024",
+      "make": "BYD",
+      "model": "Atto 3",
+      "trim": "Extended Range",
+      "year": 2024,
+      "batteryCapacityKWh": 60.5,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 88,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 44
+        },
+        {
+          "soc": 10,
+          "kw": 83.6
+        },
+        {
+          "soc": 20,
+          "kw": 88
+        },
+        {
+          "soc": 30,
+          "kw": 88
+        },
+        {
+          "soc": 40,
+          "kw": 83.6
+        },
+        {
+          "soc": 50,
+          "kw": 74.8
+        },
+        {
+          "soc": 60,
+          "kw": 66
+        },
+        {
+          "soc": 70,
+          "kw": 52.8
+        },
+        {
+          "soc": 80,
+          "kw": 39.6
+        },
+        {
+          "soc": 90,
+          "kw": 26.4
+        },
+        {
+          "soc": 100,
+          "kw": 13.2
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-dolphin-sr-2024",
+      "make": "BYD",
+      "model": "Dolphin",
+      "trim": "Standard Range",
+      "year": 2024,
+      "batteryCapacityKWh": 44.9,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 65,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 32.5
+        },
+        {
+          "soc": 10,
+          "kw": 61.8
+        },
+        {
+          "soc": 20,
+          "kw": 65
+        },
+        {
+          "soc": 30,
+          "kw": 65
+        },
+        {
+          "soc": 40,
+          "kw": 61.8
+        },
+        {
+          "soc": 50,
+          "kw": 55.3
+        },
+        {
+          "soc": 60,
+          "kw": 48.8
+        },
+        {
+          "soc": 70,
+          "kw": 39
+        },
+        {
+          "soc": 80,
+          "kw": 29.3
+        },
+        {
+          "soc": 90,
+          "kw": 19.5
+        },
+        {
+          "soc": 100,
+          "kw": 9.8
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-dolphin-lr-2024",
+      "make": "BYD",
+      "model": "Dolphin",
+      "trim": "Long Range (Dynamic)",
+      "year": 2024,
+      "batteryCapacityKWh": 60.5,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 88,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 44
+        },
+        {
+          "soc": 10,
+          "kw": 83.6
+        },
+        {
+          "soc": 20,
+          "kw": 88
+        },
+        {
+          "soc": 30,
+          "kw": 88
+        },
+        {
+          "soc": 40,
+          "kw": 83.6
+        },
+        {
+          "soc": 50,
+          "kw": 74.8
+        },
+        {
+          "soc": 60,
+          "kw": 66
+        },
+        {
+          "soc": 70,
+          "kw": 52.8
+        },
+        {
+          "soc": 80,
+          "kw": 39.6
+        },
+        {
+          "soc": 90,
+          "kw": 26.4
+        },
+        {
+          "soc": 100,
+          "kw": 13.2
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-seal-dynamic-rwd-2024",
+      "make": "BYD",
+      "model": "Seal",
+      "trim": "Dynamic RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 61.4,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 170,
+      "dcMaxPowerKW": 110,
       "acEfficiency": 0.9,
       "dcEfficiency": 0.94,
       "idleOverheadKW": 0.4,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 85
+          "kw": 55
         },
         {
           "soc": 10,
-          "kw": 161.5
+          "kw": 104.5
         },
         {
           "soc": 20,
-          "kw": 170
+          "kw": 110
         },
         {
           "soc": 30,
-          "kw": 170
+          "kw": 110
         },
         {
           "soc": 40,
-          "kw": 161.5
+          "kw": 104.5
         },
         {
           "soc": 50,
-          "kw": 144.5
+          "kw": 93.5
+        },
+        {
+          "soc": 60,
+          "kw": 82.5
+        },
+        {
+          "soc": 70,
+          "kw": 66
+        },
+        {
+          "soc": 80,
+          "kw": 49.5
+        },
+        {
+          "soc": 90,
+          "kw": 33
+        },
+        {
+          "soc": 100,
+          "kw": 16.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-seal-performance-awd-2024",
+      "make": "BYD",
+      "model": "Seal",
+      "trim": "Performance AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 82.6,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 75
+        },
+        {
+          "soc": 10,
+          "kw": 142.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 142.5
+        },
+        {
+          "soc": 50,
+          "kw": 127.5
+        },
+        {
+          "soc": 60,
+          "kw": 112.5
+        },
+        {
+          "soc": 70,
+          "kw": 90
+        },
+        {
+          "soc": 80,
+          "kw": 67.5
+        },
+        {
+          "soc": 90,
+          "kw": 45
+        },
+        {
+          "soc": 100,
+          "kw": 22.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-sealu-2024",
+      "make": "BYD",
+      "model": "Seal U",
+      "trim": "Comfort",
+      "year": 2024,
+      "batteryCapacityKWh": 71.8,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 110,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 55
+        },
+        {
+          "soc": 10,
+          "kw": 104.5
+        },
+        {
+          "soc": 20,
+          "kw": 110
+        },
+        {
+          "soc": 30,
+          "kw": 110
+        },
+        {
+          "soc": 40,
+          "kw": 104.5
+        },
+        {
+          "soc": 50,
+          "kw": 93.5
+        },
+        {
+          "soc": 60,
+          "kw": 82.5
+        },
+        {
+          "soc": 70,
+          "kw": 66
+        },
+        {
+          "soc": 80,
+          "kw": 49.5
+        },
+        {
+          "soc": 90,
+          "kw": 33
+        },
+        {
+          "soc": 100,
+          "kw": 16.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-sealion7-2025",
+      "make": "BYD",
+      "model": "Sealion 7",
+      "trim": "Premium AWD",
+      "year": 2025,
+      "batteryCapacityKWh": 82.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 82.5
+        },
+        {
+          "soc": 10,
+          "kw": 142.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 150
+        },
+        {
+          "soc": 50,
+          "kw": 142.5
         },
         {
           "soc": 60,
@@ -45,129 +472,1410 @@
         },
         {
           "soc": 70,
-          "kw": 102
+          "kw": 105
         },
         {
           "soc": 80,
-          "kw": 76.5
+          "kw": 75
         },
         {
           "soc": 90,
-          "kw": 51
+          "kw": 52.5
         },
         {
           "soc": 100,
-          "kw": 25.5
+          "kw": 30
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "tesla-model-3-lr-2024",
-      "make": "Tesla",
-      "model": "Model 3",
-      "trim": "Long Range AWD",
+      "id": "byd-songplus-2024",
+      "make": "BYD",
+      "model": "Song Plus EV",
+      "trim": "Comfort",
       "year": 2024,
-      "batteryCapacityKWh": 75,
+      "batteryCapacityKWh": 71.8,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 90,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 45
+        },
+        {
+          "soc": 10,
+          "kw": 85.5
+        },
+        {
+          "soc": 20,
+          "kw": 90
+        },
+        {
+          "soc": 30,
+          "kw": 90
+        },
+        {
+          "soc": 40,
+          "kw": 85.5
+        },
+        {
+          "soc": 50,
+          "kw": 76.5
+        },
+        {
+          "soc": 60,
+          "kw": 67.5
+        },
+        {
+          "soc": 70,
+          "kw": 54
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-songl-2025",
+      "make": "BYD",
+      "model": "Song L EV",
+      "trim": "Performance AWD",
+      "year": 2025,
+      "batteryCapacityKWh": 82.5,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 250,
+      "dcMaxPowerKW": 180,
       "acEfficiency": 0.9,
       "dcEfficiency": 0.94,
       "idleOverheadKW": 0.45,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 150
+          "kw": 99
         },
         {
           "soc": 10,
-          "kw": 250
+          "kw": 171
         },
         {
           "soc": 20,
-          "kw": 237.5
+          "kw": 180
         },
         {
           "soc": 30,
-          "kw": 212.5
+          "kw": 180
         },
         {
           "soc": 40,
-          "kw": 187.5
+          "kw": 180
         },
         {
           "soc": 50,
-          "kw": 162.5
+          "kw": 171
         },
         {
           "soc": 60,
-          "kw": 137.5
+          "kw": 153
         },
         {
           "soc": 70,
-          "kw": 112.5
+          "kw": 126
         },
         {
           "soc": 80,
-          "kw": 87.5
+          "kw": 90
         },
         {
           "soc": 90,
-          "kw": 62.5
+          "kw": 63
         },
         {
           "soc": 100,
-          "kw": 37.5
+          "kw": 36
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "tesla-model-y-lr-2024",
-      "make": "Tesla",
-      "model": "Model Y",
-      "trim": "Long Range AWD",
+      "id": "byd-tang-awd-2024",
+      "make": "BYD",
+      "model": "Tang",
+      "trim": "AWD (7-seat)",
       "year": 2024,
-      "batteryCapacityKWh": 75,
+      "batteryCapacityKWh": 86.4,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 250,
+      "dcMaxPowerKW": 110,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.55,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 55
+        },
+        {
+          "soc": 10,
+          "kw": 104.5
+        },
+        {
+          "soc": 20,
+          "kw": 110
+        },
+        {
+          "soc": 30,
+          "kw": 110
+        },
+        {
+          "soc": 40,
+          "kw": 104.5
+        },
+        {
+          "soc": 50,
+          "kw": 93.5
+        },
+        {
+          "soc": 60,
+          "kw": 82.5
+        },
+        {
+          "soc": 70,
+          "kw": 66
+        },
+        {
+          "soc": 80,
+          "kw": 49.5
+        },
+        {
+          "soc": 90,
+          "kw": 33
+        },
+        {
+          "soc": 100,
+          "kw": 16.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-han-rwd-2024",
+      "make": "BYD",
+      "model": "Han",
+      "trim": "RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 65.4,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 120,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 60
+        },
+        {
+          "soc": 10,
+          "kw": 114
+        },
+        {
+          "soc": 20,
+          "kw": 120
+        },
+        {
+          "soc": 30,
+          "kw": 120
+        },
+        {
+          "soc": 40,
+          "kw": 114
+        },
+        {
+          "soc": 50,
+          "kw": 102
+        },
+        {
+          "soc": 60,
+          "kw": 90
+        },
+        {
+          "soc": 70,
+          "kw": 72
+        },
+        {
+          "soc": 80,
+          "kw": 54
+        },
+        {
+          "soc": 90,
+          "kw": 36
+        },
+        {
+          "soc": 100,
+          "kw": 18
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-han-awd-performance-2024",
+      "make": "BYD",
+      "model": "Han",
+      "trim": "AWD Performance",
+      "year": 2024,
+      "batteryCapacityKWh": 85.4,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
       "acEfficiency": 0.9,
       "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 75
+        },
+        {
+          "soc": 10,
+          "kw": 142.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 142.5
+        },
+        {
+          "soc": 50,
+          "kw": 127.5
+        },
+        {
+          "soc": 60,
+          "kw": 112.5
+        },
+        {
+          "soc": 70,
+          "kw": 90
+        },
+        {
+          "soc": 80,
+          "kw": 67.5
+        },
+        {
+          "soc": 90,
+          "kw": 45
+        },
+        {
+          "soc": 100,
+          "kw": 22.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-e6-2023",
+      "make": "BYD",
+      "model": "e6",
+      "trim": "Base (MPV)",
+      "year": 2023,
+      "batteryCapacityKWh": 71.7,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 60,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 30
+        },
+        {
+          "soc": 10,
+          "kw": 54
+        },
+        {
+          "soc": 20,
+          "kw": 60
+        },
+        {
+          "soc": 30,
+          "kw": 57
+        },
+        {
+          "soc": 40,
+          "kw": 45
+        },
+        {
+          "soc": 50,
+          "kw": 33
+        },
+        {
+          "soc": 60,
+          "kw": 24
+        },
+        {
+          "soc": 70,
+          "kw": 18
+        },
+        {
+          "soc": 80,
+          "kw": 12
+        },
+        {
+          "soc": 90,
+          "kw": 9
+        },
+        {
+          "soc": 100,
+          "kw": 6
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mg4-standard-2024",
+      "make": "MG",
+      "model": "MG4 Electric",
+      "trim": "Standard",
+      "year": 2024,
+      "batteryCapacityKWh": 51,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 84,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 33.6
+        },
+        {
+          "soc": 10,
+          "kw": 71.4
+        },
+        {
+          "soc": 20,
+          "kw": 84
+        },
+        {
+          "soc": 30,
+          "kw": 84
+        },
+        {
+          "soc": 40,
+          "kw": 75.6
+        },
+        {
+          "soc": 50,
+          "kw": 63
+        },
+        {
+          "soc": 60,
+          "kw": 50.4
+        },
+        {
+          "soc": 70,
+          "kw": 37.8
+        },
+        {
+          "soc": 80,
+          "kw": 25.2
+        },
+        {
+          "soc": 90,
+          "kw": 16.8
+        },
+        {
+          "soc": 100,
+          "kw": 8.4
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mg4-longrange-2024",
+      "make": "MG",
+      "model": "MG4 Electric",
+      "trim": "Long Range",
+      "year": 2024,
+      "batteryCapacityKWh": 64,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 117,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 46.8
+        },
+        {
+          "soc": 10,
+          "kw": 99.5
+        },
+        {
+          "soc": 20,
+          "kw": 117
+        },
+        {
+          "soc": 30,
+          "kw": 117
+        },
+        {
+          "soc": 40,
+          "kw": 105.3
+        },
+        {
+          "soc": 50,
+          "kw": 87.8
+        },
+        {
+          "soc": 60,
+          "kw": 70.2
+        },
+        {
+          "soc": 70,
+          "kw": 52.7
+        },
+        {
+          "soc": 80,
+          "kw": 35.1
+        },
+        {
+          "soc": 90,
+          "kw": 23.4
+        },
+        {
+          "soc": 100,
+          "kw": 11.7
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mg4-xpower-2024",
+      "make": "MG",
+      "model": "MG4 Electric",
+      "trim": "XPower AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 77,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 144,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 57.6
+        },
+        {
+          "soc": 10,
+          "kw": 122.4
+        },
+        {
+          "soc": 20,
+          "kw": 144
+        },
+        {
+          "soc": 30,
+          "kw": 144
+        },
+        {
+          "soc": 40,
+          "kw": 129.6
+        },
+        {
+          "soc": 50,
+          "kw": 108
+        },
+        {
+          "soc": 60,
+          "kw": 86.4
+        },
+        {
+          "soc": 70,
+          "kw": 64.8
+        },
+        {
+          "soc": 80,
+          "kw": 43.2
+        },
+        {
+          "soc": 90,
+          "kw": 28.8
+        },
+        {
+          "soc": 100,
+          "kw": 14.4
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mg5-2023",
+      "make": "MG",
+      "model": "MG5 Electric",
+      "trim": "Excite",
+      "year": 2023,
+      "batteryCapacityKWh": 61.1,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 92,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 36.8
+        },
+        {
+          "soc": 10,
+          "kw": 78.2
+        },
+        {
+          "soc": 20,
+          "kw": 92
+        },
+        {
+          "soc": 30,
+          "kw": 92
+        },
+        {
+          "soc": 40,
+          "kw": 82.8
+        },
+        {
+          "soc": 50,
+          "kw": 69
+        },
+        {
+          "soc": 60,
+          "kw": 55.2
+        },
+        {
+          "soc": 70,
+          "kw": 41.4
+        },
+        {
+          "soc": 80,
+          "kw": 27.6
+        },
+        {
+          "soc": 90,
+          "kw": 18.4
+        },
+        {
+          "soc": 100,
+          "kw": 9.2
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mg-zs-ev-sr-2023",
+      "make": "MG",
+      "model": "ZS EV",
+      "trim": "Standard Range",
+      "year": 2023,
+      "batteryCapacityKWh": 51.1,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 76,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 30.4
+        },
+        {
+          "soc": 10,
+          "kw": 64.6
+        },
+        {
+          "soc": 20,
+          "kw": 76
+        },
+        {
+          "soc": 30,
+          "kw": 76
+        },
+        {
+          "soc": 40,
+          "kw": 68.4
+        },
+        {
+          "soc": 50,
+          "kw": 57
+        },
+        {
+          "soc": 60,
+          "kw": 45.6
+        },
+        {
+          "soc": 70,
+          "kw": 34.2
+        },
+        {
+          "soc": 80,
+          "kw": 22.8
+        },
+        {
+          "soc": 90,
+          "kw": 15.2
+        },
+        {
+          "soc": 100,
+          "kw": 7.6
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mg-zs-ev-lr-2023",
+      "make": "MG",
+      "model": "ZS EV",
+      "trim": "Long Range",
+      "year": 2023,
+      "batteryCapacityKWh": 68.3,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 92,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 36.8
+        },
+        {
+          "soc": 10,
+          "kw": 78.2
+        },
+        {
+          "soc": 20,
+          "kw": 92
+        },
+        {
+          "soc": 30,
+          "kw": 92
+        },
+        {
+          "soc": 40,
+          "kw": 82.8
+        },
+        {
+          "soc": 50,
+          "kw": 69
+        },
+        {
+          "soc": 60,
+          "kw": 55.2
+        },
+        {
+          "soc": 70,
+          "kw": 41.4
+        },
+        {
+          "soc": 80,
+          "kw": 27.6
+        },
+        {
+          "soc": 90,
+          "kw": 18.4
+        },
+        {
+          "soc": 100,
+          "kw": 9.2
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "ora-goodcat-sr-2023",
+      "make": "GWM",
+      "model": "Ora Good Cat",
+      "trim": "Standard Range",
+      "year": 2023,
+      "batteryCapacityKWh": 47.8,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 64,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 32
+        },
+        {
+          "soc": 10,
+          "kw": 57.6
+        },
+        {
+          "soc": 20,
+          "kw": 64
+        },
+        {
+          "soc": 30,
+          "kw": 60.8
+        },
+        {
+          "soc": 40,
+          "kw": 48
+        },
+        {
+          "soc": 50,
+          "kw": 35.2
+        },
+        {
+          "soc": 60,
+          "kw": 25.6
+        },
+        {
+          "soc": 70,
+          "kw": 19.2
+        },
+        {
+          "soc": 80,
+          "kw": 12.8
+        },
+        {
+          "soc": 90,
+          "kw": 9.6
+        },
+        {
+          "soc": 100,
+          "kw": 6.4
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "ora-goodcat-lr-2023",
+      "make": "GWM",
+      "model": "Ora Good Cat",
+      "trim": "Long Range",
+      "year": 2023,
+      "batteryCapacityKWh": 63,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 80,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40
+        },
+        {
+          "soc": 10,
+          "kw": 72
+        },
+        {
+          "soc": 20,
+          "kw": 80
+        },
+        {
+          "soc": 30,
+          "kw": 76
+        },
+        {
+          "soc": 40,
+          "kw": 60
+        },
+        {
+          "soc": 50,
+          "kw": 44
+        },
+        {
+          "soc": 60,
+          "kw": 32
+        },
+        {
+          "soc": 70,
+          "kw": 24
+        },
+        {
+          "soc": 80,
+          "kw": 16
+        },
+        {
+          "soc": 90,
+          "kw": 12
+        },
+        {
+          "soc": 100,
+          "kw": 8
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "xpeng-g6-sr-2024",
+      "make": "XPeng",
+      "model": "G6",
+      "trim": "Standard Range RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 66,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 215,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 118.3
+        },
+        {
+          "soc": 10,
+          "kw": 204.3
+        },
+        {
+          "soc": 20,
+          "kw": 215
+        },
+        {
+          "soc": 30,
+          "kw": 215
+        },
+        {
+          "soc": 40,
+          "kw": 215
+        },
+        {
+          "soc": 50,
+          "kw": 204.3
+        },
+        {
+          "soc": 60,
+          "kw": 182.8
+        },
+        {
+          "soc": 70,
+          "kw": 150.5
+        },
+        {
+          "soc": 80,
+          "kw": 107.5
+        },
+        {
+          "soc": 90,
+          "kw": 75.3
+        },
+        {
+          "soc": 100,
+          "kw": 43
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "xpeng-g6-lr-2024",
+      "make": "XPeng",
+      "model": "G6",
+      "trim": "Long Range AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 87.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 280,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
       "idleOverheadKW": 0.5,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 150
+          "kw": 154
         },
         {
           "soc": 10,
-          "kw": 250
+          "kw": 266
         },
         {
           "soc": 20,
-          "kw": 237.5
+          "kw": 280
         },
         {
           "soc": 30,
-          "kw": 212.5
+          "kw": 280
         },
         {
           "soc": 40,
-          "kw": 187.5
+          "kw": 280
         },
         {
           "soc": 50,
-          "kw": 162.5
+          "kw": 266
         },
         {
           "soc": 60,
-          "kw": 137.5
+          "kw": 238
         },
         {
           "soc": 70,
-          "kw": 112.5
+          "kw": 196
+        },
+        {
+          "soc": 80,
+          "kw": 140
+        },
+        {
+          "soc": 90,
+          "kw": 98
+        },
+        {
+          "soc": 100,
+          "kw": 56
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "xpeng-p7-rwd-2023",
+      "make": "XPeng",
+      "model": "P7",
+      "trim": "RWD",
+      "year": 2023,
+      "batteryCapacityKWh": 70.8,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 110,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 44
+        },
+        {
+          "soc": 10,
+          "kw": 93.5
+        },
+        {
+          "soc": 20,
+          "kw": 110
+        },
+        {
+          "soc": 30,
+          "kw": 110
+        },
+        {
+          "soc": 40,
+          "kw": 99
+        },
+        {
+          "soc": 50,
+          "kw": 82.5
+        },
+        {
+          "soc": 60,
+          "kw": 66
+        },
+        {
+          "soc": 70,
+          "kw": 49.5
+        },
+        {
+          "soc": 80,
+          "kw": 33
+        },
+        {
+          "soc": 90,
+          "kw": 22
+        },
+        {
+          "soc": 100,
+          "kw": 11
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "xpeng-g9-2024",
+      "make": "XPeng",
+      "model": "G9",
+      "trim": "Long Range AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 98,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 300,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.55,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 165
+        },
+        {
+          "soc": 10,
+          "kw": 285
+        },
+        {
+          "soc": 20,
+          "kw": 300
+        },
+        {
+          "soc": 30,
+          "kw": 300
+        },
+        {
+          "soc": 40,
+          "kw": 300
+        },
+        {
+          "soc": 50,
+          "kw": 285
+        },
+        {
+          "soc": 60,
+          "kw": 255
+        },
+        {
+          "soc": 70,
+          "kw": 210
+        },
+        {
+          "soc": 80,
+          "kw": 150
+        },
+        {
+          "soc": 90,
+          "kw": 105
+        },
+        {
+          "soc": 100,
+          "kw": 60
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "zeekr-001-lr-2024",
+      "make": "Zeekr",
+      "model": "001",
+      "trim": "Long Range RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 86,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 200,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.5,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 110
+        },
+        {
+          "soc": 10,
+          "kw": 190
+        },
+        {
+          "soc": 20,
+          "kw": 200
+        },
+        {
+          "soc": 30,
+          "kw": 200
+        },
+        {
+          "soc": 40,
+          "kw": 200
+        },
+        {
+          "soc": 50,
+          "kw": 190
+        },
+        {
+          "soc": 60,
+          "kw": 170
+        },
+        {
+          "soc": 70,
+          "kw": 140
+        },
+        {
+          "soc": 80,
+          "kw": 100
+        },
+        {
+          "soc": 90,
+          "kw": 70
+        },
+        {
+          "soc": 100,
+          "kw": 40
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "zeekr-x-2024",
+      "make": "Zeekr",
+      "model": "X",
+      "trim": "Core AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 66,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 82.5
+        },
+        {
+          "soc": 10,
+          "kw": 142.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 150
+        },
+        {
+          "soc": 50,
+          "kw": 142.5
+        },
+        {
+          "soc": 60,
+          "kw": 127.5
+        },
+        {
+          "soc": 70,
+          "kw": 105
+        },
+        {
+          "soc": 80,
+          "kw": 75
+        },
+        {
+          "soc": 90,
+          "kw": 52.5
+        },
+        {
+          "soc": 100,
+          "kw": 30
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "wuling-air-ev-lr-2023",
+      "make": "Wuling",
+      "model": "Air EV",
+      "trim": "Long Range",
+      "year": 2023,
+      "batteryCapacityKWh": 26.7,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 30,
+      "acEfficiency": 0.86,
+      "dcEfficiency": 0.9,
+      "idleOverheadKW": 0.2,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 15
+        },
+        {
+          "soc": 10,
+          "kw": 27
+        },
+        {
+          "soc": 20,
+          "kw": 30
+        },
+        {
+          "soc": 30,
+          "kw": 28.5
+        },
+        {
+          "soc": 40,
+          "kw": 22.5
+        },
+        {
+          "soc": 50,
+          "kw": 16.5
+        },
+        {
+          "soc": 60,
+          "kw": 12
+        },
+        {
+          "soc": 70,
+          "kw": 9
+        },
+        {
+          "soc": 80,
+          "kw": 6
+        },
+        {
+          "soc": 90,
+          "kw": 4.5
+        },
+        {
+          "soc": 100,
+          "kw": 3
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "nio-et5-2024",
+      "make": "Nio",
+      "model": "ET5",
+      "trim": "75 kWh RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 75,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 140,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 56
+        },
+        {
+          "soc": 10,
+          "kw": 119
+        },
+        {
+          "soc": 20,
+          "kw": 140
+        },
+        {
+          "soc": 30,
+          "kw": 140
+        },
+        {
+          "soc": 40,
+          "kw": 126
+        },
+        {
+          "soc": 50,
+          "kw": 105
+        },
+        {
+          "soc": 60,
+          "kw": 84
+        },
+        {
+          "soc": 70,
+          "kw": 63
+        },
+        {
+          "soc": 80,
+          "kw": 42
+        },
+        {
+          "soc": 90,
+          "kw": 28
+        },
+        {
+          "soc": 100,
+          "kw": 14
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "hyundai-ioniq5-sr-2024",
+      "make": "Hyundai",
+      "model": "Ioniq 5",
+      "trim": "Standard Range RWD (800V)",
+      "year": 2024,
+      "batteryCapacityKWh": 58,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 175,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 96.3
+        },
+        {
+          "soc": 10,
+          "kw": 166.3
+        },
+        {
+          "soc": 20,
+          "kw": 175
+        },
+        {
+          "soc": 30,
+          "kw": 175
+        },
+        {
+          "soc": 40,
+          "kw": 175
+        },
+        {
+          "soc": 50,
+          "kw": 166.3
+        },
+        {
+          "soc": 60,
+          "kw": 148.8
+        },
+        {
+          "soc": 70,
+          "kw": 122.5
         },
         {
           "soc": 80,
@@ -175,14 +1883,14 @@
         },
         {
           "soc": 90,
-          "kw": 62.5
+          "kw": 61.2
         },
         {
           "soc": 100,
-          "kw": 37.5
+          "kw": 35
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
@@ -243,68 +1951,68 @@
           "kw": 47
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "kia-ev6-2024",
-      "make": "Kia",
-      "model": "EV6",
-      "trim": "Long Range AWD (800V)",
+      "id": "hyundai-ioniq6-sr-2024",
+      "make": "Hyundai",
+      "model": "Ioniq 6",
+      "trim": "Standard Range RWD (800V)",
       "year": 2024,
-      "batteryCapacityKWh": 77.4,
+      "batteryCapacityKWh": 53,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 235,
-      "acEfficiency": 0.89,
+      "dcMaxPowerKW": 111,
+      "acEfficiency": 0.9,
       "dcEfficiency": 0.95,
-      "idleOverheadKW": 0.35,
+      "idleOverheadKW": 0.28,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 129.3
+          "kw": 61.1
         },
         {
           "soc": 10,
-          "kw": 223.3
+          "kw": 105.5
         },
         {
           "soc": 20,
-          "kw": 235
+          "kw": 111
         },
         {
           "soc": 30,
-          "kw": 235
+          "kw": 111
         },
         {
           "soc": 40,
-          "kw": 235
+          "kw": 111
         },
         {
           "soc": 50,
-          "kw": 223.3
+          "kw": 105.5
         },
         {
           "soc": 60,
-          "kw": 199.8
+          "kw": 94.4
         },
         {
           "soc": 70,
-          "kw": 164.5
+          "kw": 77.7
         },
         {
           "soc": 80,
-          "kw": 117.5
+          "kw": 55.5
         },
         {
           "soc": 90,
-          "kw": 82.3
+          "kw": 38.8
         },
         {
           "soc": 100,
-          "kw": 47
+          "kw": 22.2
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
@@ -365,21 +2073,936 @@
           "kw": 48
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "ford-mache-er-2024",
-      "make": "Ford",
-      "model": "Mustang Mach-E",
-      "trim": "Extended Range AWD",
+      "id": "hyundai-kona-ev-sr-2024",
+      "make": "Hyundai",
+      "model": "Kona Electric",
+      "trim": "Standard Range",
       "year": 2024,
-      "batteryCapacityKWh": 91,
+      "batteryCapacityKWh": 48.6,
       "acMaxPowerKW": 10.5,
-      "dcMaxPowerKW": 150,
+      "dcMaxPowerKW": 74,
       "acEfficiency": 0.88,
       "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 29.6
+        },
+        {
+          "soc": 10,
+          "kw": 62.9
+        },
+        {
+          "soc": 20,
+          "kw": 74
+        },
+        {
+          "soc": 30,
+          "kw": 74
+        },
+        {
+          "soc": 40,
+          "kw": 66.6
+        },
+        {
+          "soc": 50,
+          "kw": 55.5
+        },
+        {
+          "soc": 60,
+          "kw": 44.4
+        },
+        {
+          "soc": 70,
+          "kw": 33.3
+        },
+        {
+          "soc": 80,
+          "kw": 22.2
+        },
+        {
+          "soc": 90,
+          "kw": 14.8
+        },
+        {
+          "soc": 100,
+          "kw": 7.4
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "hyundai-kona-ev-lr-2024",
+      "make": "Hyundai",
+      "model": "Kona Electric",
+      "trim": "Long Range",
+      "year": 2024,
+      "batteryCapacityKWh": 65.4,
+      "acMaxPowerKW": 10.5,
+      "dcMaxPowerKW": 102,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40.8
+        },
+        {
+          "soc": 10,
+          "kw": 86.7
+        },
+        {
+          "soc": 20,
+          "kw": 102
+        },
+        {
+          "soc": 30,
+          "kw": 102
+        },
+        {
+          "soc": 40,
+          "kw": 91.8
+        },
+        {
+          "soc": 50,
+          "kw": 76.5
+        },
+        {
+          "soc": 60,
+          "kw": 61.2
+        },
+        {
+          "soc": 70,
+          "kw": 45.9
+        },
+        {
+          "soc": 80,
+          "kw": 30.6
+        },
+        {
+          "soc": 90,
+          "kw": 20.4
+        },
+        {
+          "soc": 100,
+          "kw": 10.2
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-ev6-sr-2024",
+      "make": "Kia",
+      "model": "EV6",
+      "trim": "Standard Range RWD (800V)",
+      "year": 2024,
+      "batteryCapacityKWh": 58,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 175,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 96.3
+        },
+        {
+          "soc": 10,
+          "kw": 166.3
+        },
+        {
+          "soc": 20,
+          "kw": 175
+        },
+        {
+          "soc": 30,
+          "kw": 175
+        },
+        {
+          "soc": 40,
+          "kw": 175
+        },
+        {
+          "soc": 50,
+          "kw": 166.3
+        },
+        {
+          "soc": 60,
+          "kw": 148.8
+        },
+        {
+          "soc": 70,
+          "kw": 122.5
+        },
+        {
+          "soc": 80,
+          "kw": 87.5
+        },
+        {
+          "soc": 90,
+          "kw": 61.2
+        },
+        {
+          "soc": 100,
+          "kw": 35
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-ev6-2024",
+      "make": "Kia",
+      "model": "EV6",
+      "trim": "Long Range AWD (800V)",
+      "year": 2024,
+      "batteryCapacityKWh": 77.4,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 235,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 129.3
+        },
+        {
+          "soc": 10,
+          "kw": 223.3
+        },
+        {
+          "soc": 20,
+          "kw": 235
+        },
+        {
+          "soc": 30,
+          "kw": 235
+        },
+        {
+          "soc": 40,
+          "kw": 235
+        },
+        {
+          "soc": 50,
+          "kw": 223.3
+        },
+        {
+          "soc": 60,
+          "kw": 199.8
+        },
+        {
+          "soc": 70,
+          "kw": 164.5
+        },
+        {
+          "soc": 80,
+          "kw": 117.5
+        },
+        {
+          "soc": 90,
+          "kw": 82.3
+        },
+        {
+          "soc": 100,
+          "kw": 47
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-ev6-gt-2024",
+      "make": "Kia",
+      "model": "EV6",
+      "trim": "GT AWD Performance (800V)",
+      "year": 2024,
+      "batteryCapacityKWh": 77.4,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 258,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 141.9
+        },
+        {
+          "soc": 10,
+          "kw": 245.1
+        },
+        {
+          "soc": 20,
+          "kw": 258
+        },
+        {
+          "soc": 30,
+          "kw": 258
+        },
+        {
+          "soc": 40,
+          "kw": 258
+        },
+        {
+          "soc": 50,
+          "kw": 245.1
+        },
+        {
+          "soc": 60,
+          "kw": 219.3
+        },
+        {
+          "soc": 70,
+          "kw": 180.6
+        },
+        {
+          "soc": 80,
+          "kw": 129
+        },
+        {
+          "soc": 90,
+          "kw": 90.3
+        },
+        {
+          "soc": 100,
+          "kw": 51.6
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-niro-ev-2023",
+      "make": "Kia",
+      "model": "Niro EV",
+      "trim": "Wind",
+      "year": 2023,
+      "batteryCapacityKWh": 64.8,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 85,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 34
+        },
+        {
+          "soc": 10,
+          "kw": 72.3
+        },
+        {
+          "soc": 20,
+          "kw": 85
+        },
+        {
+          "soc": 30,
+          "kw": 85
+        },
+        {
+          "soc": 40,
+          "kw": 76.5
+        },
+        {
+          "soc": 50,
+          "kw": 63.8
+        },
+        {
+          "soc": 60,
+          "kw": 51
+        },
+        {
+          "soc": 70,
+          "kw": 38.3
+        },
+        {
+          "soc": 80,
+          "kw": 25.5
+        },
+        {
+          "soc": 90,
+          "kw": 17
+        },
+        {
+          "soc": 100,
+          "kw": 8.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-ev9-2024",
+      "make": "Kia",
+      "model": "EV9",
+      "trim": "Long Range AWD (7-seat, 800V)",
+      "year": 2024,
+      "batteryCapacityKWh": 99.8,
+      "acMaxPowerKW": 10.9,
+      "dcMaxPowerKW": 210,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.6,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 115.5
+        },
+        {
+          "soc": 10,
+          "kw": 199.5
+        },
+        {
+          "soc": 20,
+          "kw": 210
+        },
+        {
+          "soc": 30,
+          "kw": 210
+        },
+        {
+          "soc": 40,
+          "kw": 210
+        },
+        {
+          "soc": 50,
+          "kw": 199.5
+        },
+        {
+          "soc": 60,
+          "kw": 178.5
+        },
+        {
+          "soc": 70,
+          "kw": 147
+        },
+        {
+          "soc": 80,
+          "kw": 105
+        },
+        {
+          "soc": 90,
+          "kw": 73.5
+        },
+        {
+          "soc": 100,
+          "kw": 42
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-ev3-sr-2025",
+      "make": "Kia",
+      "model": "EV3",
+      "trim": "Standard Range",
+      "year": 2025,
+      "batteryCapacityKWh": 58.3,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 102,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40.8
+        },
+        {
+          "soc": 10,
+          "kw": 86.7
+        },
+        {
+          "soc": 20,
+          "kw": 102
+        },
+        {
+          "soc": 30,
+          "kw": 102
+        },
+        {
+          "soc": 40,
+          "kw": 91.8
+        },
+        {
+          "soc": 50,
+          "kw": 76.5
+        },
+        {
+          "soc": 60,
+          "kw": 61.2
+        },
+        {
+          "soc": 70,
+          "kw": 45.9
+        },
+        {
+          "soc": 80,
+          "kw": 30.6
+        },
+        {
+          "soc": 90,
+          "kw": 20.4
+        },
+        {
+          "soc": 100,
+          "kw": 10.2
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "kia-ev3-lr-2025",
+      "make": "Kia",
+      "model": "EV3",
+      "trim": "Long Range",
+      "year": 2025,
+      "batteryCapacityKWh": 81.4,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 128,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 51.2
+        },
+        {
+          "soc": 10,
+          "kw": 108.8
+        },
+        {
+          "soc": 20,
+          "kw": 128
+        },
+        {
+          "soc": 30,
+          "kw": 128
+        },
+        {
+          "soc": 40,
+          "kw": 115.2
+        },
+        {
+          "soc": 50,
+          "kw": 96
+        },
+        {
+          "soc": 60,
+          "kw": 76.8
+        },
+        {
+          "soc": 70,
+          "kw": 57.6
+        },
+        {
+          "soc": 80,
+          "kw": 38.4
+        },
+        {
+          "soc": 90,
+          "kw": 25.6
+        },
+        {
+          "soc": 100,
+          "kw": 12.8
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "tesla-model-3-rwd-2024",
+      "make": "Tesla",
+      "model": "Model 3",
+      "trim": "RWD (LFP)",
+      "year": 2024,
+      "batteryCapacityKWh": 57.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 170,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 85
+        },
+        {
+          "soc": 10,
+          "kw": 161.5
+        },
+        {
+          "soc": 20,
+          "kw": 170
+        },
+        {
+          "soc": 30,
+          "kw": 170
+        },
+        {
+          "soc": 40,
+          "kw": 161.5
+        },
+        {
+          "soc": 50,
+          "kw": 144.5
+        },
+        {
+          "soc": 60,
+          "kw": 127.5
+        },
+        {
+          "soc": 70,
+          "kw": 102
+        },
+        {
+          "soc": 80,
+          "kw": 76.5
+        },
+        {
+          "soc": 90,
+          "kw": 51
+        },
+        {
+          "soc": 100,
+          "kw": 25.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "tesla-model-3-lr-2024",
+      "make": "Tesla",
+      "model": "Model 3",
+      "trim": "Long Range AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 75,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 250,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 150
+        },
+        {
+          "soc": 10,
+          "kw": 250
+        },
+        {
+          "soc": 20,
+          "kw": 237.5
+        },
+        {
+          "soc": 30,
+          "kw": 212.5
+        },
+        {
+          "soc": 40,
+          "kw": 187.5
+        },
+        {
+          "soc": 50,
+          "kw": 162.5
+        },
+        {
+          "soc": 60,
+          "kw": 137.5
+        },
+        {
+          "soc": 70,
+          "kw": 112.5
+        },
+        {
+          "soc": 80,
+          "kw": 87.5
+        },
+        {
+          "soc": 90,
+          "kw": 62.5
+        },
+        {
+          "soc": 100,
+          "kw": 37.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "tesla-model-3-performance-2024",
+      "make": "Tesla",
+      "model": "Model 3",
+      "trim": "Performance AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 75,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 250,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
       "idleOverheadKW": 0.5,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 150
+        },
+        {
+          "soc": 10,
+          "kw": 250
+        },
+        {
+          "soc": 20,
+          "kw": 237.5
+        },
+        {
+          "soc": 30,
+          "kw": 212.5
+        },
+        {
+          "soc": 40,
+          "kw": 187.5
+        },
+        {
+          "soc": 50,
+          "kw": 162.5
+        },
+        {
+          "soc": 60,
+          "kw": 137.5
+        },
+        {
+          "soc": 70,
+          "kw": 112.5
+        },
+        {
+          "soc": 80,
+          "kw": 87.5
+        },
+        {
+          "soc": 90,
+          "kw": 62.5
+        },
+        {
+          "soc": 100,
+          "kw": 37.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "tesla-model-y-rwd-2024",
+      "make": "Tesla",
+      "model": "Model Y",
+      "trim": "RWD (LFP)",
+      "year": 2024,
+      "batteryCapacityKWh": 60,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 175,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 87.5
+        },
+        {
+          "soc": 10,
+          "kw": 166.3
+        },
+        {
+          "soc": 20,
+          "kw": 175
+        },
+        {
+          "soc": 30,
+          "kw": 175
+        },
+        {
+          "soc": 40,
+          "kw": 166.3
+        },
+        {
+          "soc": 50,
+          "kw": 148.8
+        },
+        {
+          "soc": 60,
+          "kw": 131.3
+        },
+        {
+          "soc": 70,
+          "kw": 105
+        },
+        {
+          "soc": 80,
+          "kw": 78.8
+        },
+        {
+          "soc": 90,
+          "kw": 52.5
+        },
+        {
+          "soc": 100,
+          "kw": 26.3
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "tesla-model-y-lr-2024",
+      "make": "Tesla",
+      "model": "Model Y",
+      "trim": "Long Range AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 75,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 250,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.5,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 150
+        },
+        {
+          "soc": 10,
+          "kw": 250
+        },
+        {
+          "soc": 20,
+          "kw": 237.5
+        },
+        {
+          "soc": 30,
+          "kw": 212.5
+        },
+        {
+          "soc": 40,
+          "kw": 187.5
+        },
+        {
+          "soc": 50,
+          "kw": 162.5
+        },
+        {
+          "soc": 60,
+          "kw": 137.5
+        },
+        {
+          "soc": 70,
+          "kw": 112.5
+        },
+        {
+          "soc": 80,
+          "kw": 87.5
+        },
+        {
+          "soc": 90,
+          "kw": 62.5
+        },
+        {
+          "soc": 100,
+          "kw": 37.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "tesla-model-y-performance-2024",
+      "make": "Tesla",
+      "model": "Model Y",
+      "trim": "Performance AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 75,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 250,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.55,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 150
+        },
+        {
+          "soc": 10,
+          "kw": 250
+        },
+        {
+          "soc": 20,
+          "kw": 237.5
+        },
+        {
+          "soc": 30,
+          "kw": 212.5
+        },
+        {
+          "soc": 40,
+          "kw": 187.5
+        },
+        {
+          "soc": 50,
+          "kw": 162.5
+        },
+        {
+          "soc": 60,
+          "kw": 137.5
+        },
+        {
+          "soc": 70,
+          "kw": 112.5
+        },
+        {
+          "soc": 80,
+          "kw": 87.5
+        },
+        {
+          "soc": 90,
+          "kw": 62.5
+        },
+        {
+          "soc": 100,
+          "kw": 37.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "volvo-xc40-recharge-sm-2024",
+      "make": "Volvo",
+      "model": "XC40 Recharge",
+      "trim": "Single Motor Extended Range",
+      "year": 2024,
+      "batteryCapacityKWh": 69,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
       "dcChargingCurve": [
         {
           "soc": 0,
@@ -426,190 +3049,129 @@
           "kw": 15
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "nissan-leaf-e-plus-2023",
-      "make": "Nissan",
-      "model": "Leaf",
-      "trim": "e+ SV",
-      "year": 2023,
-      "batteryCapacityKWh": 59,
-      "acMaxPowerKW": 6.6,
-      "dcMaxPowerKW": 100,
-      "acEfficiency": 0.87,
-      "dcEfficiency": 0.92,
-      "idleOverheadKW": 0.25,
+      "id": "volvo-xc40-recharge-tm-awd-2024",
+      "make": "Volvo",
+      "model": "XC40 Recharge",
+      "trim": "Twin Motor AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 69,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 130,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 50
+          "kw": 52
         },
         {
           "soc": 10,
+          "kw": 110.5
+        },
+        {
+          "soc": 20,
+          "kw": 130
+        },
+        {
+          "soc": 30,
+          "kw": 130
+        },
+        {
+          "soc": 40,
+          "kw": 117
+        },
+        {
+          "soc": 50,
+          "kw": 97.5
+        },
+        {
+          "soc": 60,
+          "kw": 78
+        },
+        {
+          "soc": 70,
+          "kw": 58.5
+        },
+        {
+          "soc": 80,
+          "kw": 39
+        },
+        {
+          "soc": 90,
+          "kw": 26
+        },
+        {
+          "soc": 100,
+          "kw": 13
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "volvo-c40-recharge-sm-2024",
+      "make": "Volvo",
+      "model": "C40 Recharge",
+      "trim": "Single Motor Extended Range",
+      "year": 2024,
+      "batteryCapacityKWh": 69,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 60
+        },
+        {
+          "soc": 10,
+          "kw": 127.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 135
+        },
+        {
+          "soc": 50,
+          "kw": 112.5
+        },
+        {
+          "soc": 60,
           "kw": 90
         },
         {
-          "soc": 20,
-          "kw": 100
-        },
-        {
-          "soc": 30,
-          "kw": 95
-        },
-        {
-          "soc": 40,
-          "kw": 75
-        },
-        {
-          "soc": 50,
-          "kw": 55
-        },
-        {
-          "soc": 60,
-          "kw": 40
-        },
-        {
           "soc": 70,
+          "kw": 67.5
+        },
+        {
+          "soc": 80,
+          "kw": 45
+        },
+        {
+          "soc": 90,
           "kw": 30
         },
         {
-          "soc": 80,
-          "kw": 20
-        },
-        {
-          "soc": 90,
+          "soc": 100,
           "kw": 15
-        },
-        {
-          "soc": 100,
-          "kw": 10
         }
       ],
-      "lastUpdated": "2026-01-01",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
-    },
-    {
-      "id": "chevrolet-bolt-euv-2023",
-      "make": "Chevrolet",
-      "model": "Bolt EUV",
-      "trim": "Premier",
-      "year": 2023,
-      "batteryCapacityKWh": 65,
-      "acMaxPowerKW": 11.5,
-      "dcMaxPowerKW": 55,
-      "acEfficiency": 0.88,
-      "dcEfficiency": 0.91,
-      "idleOverheadKW": 0.3,
-      "dcChargingCurve": [
-        {
-          "soc": 0,
-          "kw": 27.5
-        },
-        {
-          "soc": 10,
-          "kw": 49.5
-        },
-        {
-          "soc": 20,
-          "kw": 55
-        },
-        {
-          "soc": 30,
-          "kw": 52.3
-        },
-        {
-          "soc": 40,
-          "kw": 41.3
-        },
-        {
-          "soc": 50,
-          "kw": 30.3
-        },
-        {
-          "soc": 60,
-          "kw": 22
-        },
-        {
-          "soc": 70,
-          "kw": 16.5
-        },
-        {
-          "soc": 80,
-          "kw": 11
-        },
-        {
-          "soc": 90,
-          "kw": 8.3
-        },
-        {
-          "soc": 100,
-          "kw": 5.5
-        }
-      ],
-      "lastUpdated": "2026-01-01",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
-    },
-    {
-      "id": "cadillac-lyriq-2024",
-      "make": "Cadillac",
-      "model": "Lyriq",
-      "trim": "AWD",
-      "year": 2024,
-      "batteryCapacityKWh": 102,
-      "acMaxPowerKW": 11.5,
-      "dcMaxPowerKW": 190,
-      "acEfficiency": 0.89,
-      "dcEfficiency": 0.94,
-      "idleOverheadKW": 0.55,
-      "dcChargingCurve": [
-        {
-          "soc": 0,
-          "kw": 76
-        },
-        {
-          "soc": 10,
-          "kw": 161.5
-        },
-        {
-          "soc": 20,
-          "kw": 190
-        },
-        {
-          "soc": 30,
-          "kw": 190
-        },
-        {
-          "soc": 40,
-          "kw": 171
-        },
-        {
-          "soc": 50,
-          "kw": 142.5
-        },
-        {
-          "soc": 60,
-          "kw": 114
-        },
-        {
-          "soc": 70,
-          "kw": 85.5
-        },
-        {
-          "soc": 80,
-          "kw": 57
-        },
-        {
-          "soc": 90,
-          "kw": 38
-        },
-        {
-          "soc": 100,
-          "kw": 19
-        }
-      ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
@@ -670,68 +3232,373 @@
           "kw": 20.5
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "audi-q4-etron-2024",
-      "make": "Audi",
-      "model": "Q4 e-tron",
-      "trim": "50 quattro",
+      "id": "bmw-i5-edrive40-2024",
+      "make": "BMW",
+      "model": "i5",
+      "trim": "eDrive40",
       "year": 2024,
-      "batteryCapacityKWh": 76.6,
+      "batteryCapacityKWh": 81.2,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 135,
+      "dcMaxPowerKW": 205,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 82
+        },
+        {
+          "soc": 10,
+          "kw": 174.3
+        },
+        {
+          "soc": 20,
+          "kw": 205
+        },
+        {
+          "soc": 30,
+          "kw": 205
+        },
+        {
+          "soc": 40,
+          "kw": 184.5
+        },
+        {
+          "soc": 50,
+          "kw": 153.8
+        },
+        {
+          "soc": 60,
+          "kw": 123
+        },
+        {
+          "soc": 70,
+          "kw": 92.3
+        },
+        {
+          "soc": 80,
+          "kw": 61.5
+        },
+        {
+          "soc": 90,
+          "kw": 41
+        },
+        {
+          "soc": 100,
+          "kw": 20.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "bmw-ix1-edrive20-2024",
+      "make": "BMW",
+      "model": "iX1",
+      "trim": "eDrive20",
+      "year": 2024,
+      "batteryCapacityKWh": 64.7,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 130,
       "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 52
+        },
+        {
+          "soc": 10,
+          "kw": 110.5
+        },
+        {
+          "soc": 20,
+          "kw": 130
+        },
+        {
+          "soc": 30,
+          "kw": 130
+        },
+        {
+          "soc": 40,
+          "kw": 117
+        },
+        {
+          "soc": 50,
+          "kw": 97.5
+        },
+        {
+          "soc": 60,
+          "kw": 78
+        },
+        {
+          "soc": 70,
+          "kw": 58.5
+        },
+        {
+          "soc": 80,
+          "kw": 39
+        },
+        {
+          "soc": 90,
+          "kw": 26
+        },
+        {
+          "soc": 100,
+          "kw": 13
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "bmw-ix3-2024",
+      "make": "BMW",
+      "model": "iX3",
+      "trim": "Impressive",
+      "year": 2024,
+      "batteryCapacityKWh": 74,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 60
+        },
+        {
+          "soc": 10,
+          "kw": 127.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 135
+        },
+        {
+          "soc": 50,
+          "kw": 112.5
+        },
+        {
+          "soc": 60,
+          "kw": 90
+        },
+        {
+          "soc": 70,
+          "kw": 67.5
+        },
+        {
+          "soc": 80,
+          "kw": 45
+        },
+        {
+          "soc": 90,
+          "kw": 30
+        },
+        {
+          "soc": 100,
+          "kw": 15
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mercedes-eqa250-2024",
+      "make": "Mercedes-Benz",
+      "model": "EQA",
+      "trim": "250",
+      "year": 2024,
+      "batteryCapacityKWh": 66.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 100,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40
+        },
+        {
+          "soc": 10,
+          "kw": 85
+        },
+        {
+          "soc": 20,
+          "kw": 100
+        },
+        {
+          "soc": 30,
+          "kw": 100
+        },
+        {
+          "soc": 40,
+          "kw": 90
+        },
+        {
+          "soc": 50,
+          "kw": 75
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 45
+        },
+        {
+          "soc": 80,
+          "kw": 30
+        },
+        {
+          "soc": 90,
+          "kw": 20
+        },
+        {
+          "soc": 100,
+          "kw": 10
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mercedes-eqb300-2024",
+      "make": "Mercedes-Benz",
+      "model": "EQB",
+      "trim": "300 4MATIC",
+      "year": 2024,
+      "batteryCapacityKWh": 66.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 100,
+      "acEfficiency": 0.88,
       "dcEfficiency": 0.93,
       "idleOverheadKW": 0.45,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 54
+          "kw": 40
         },
         {
           "soc": 10,
-          "kw": 114.8
+          "kw": 85
         },
         {
           "soc": 20,
-          "kw": 135
+          "kw": 100
         },
         {
           "soc": 30,
-          "kw": 135
+          "kw": 100
         },
         {
           "soc": 40,
-          "kw": 121.5
+          "kw": 90
         },
         {
           "soc": 50,
-          "kw": 101.3
+          "kw": 75
         },
         {
           "soc": 60,
-          "kw": 81
+          "kw": 60
         },
         {
           "soc": 70,
-          "kw": 60.8
+          "kw": 45
         },
         {
           "soc": 80,
-          "kw": 40.5
+          "kw": 30
         },
         {
           "soc": 90,
-          "kw": 27
+          "kw": 20
         },
         {
           "soc": 100,
-          "kw": 13.5
+          "kw": 10
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mercedes-eqe350-2024",
+      "make": "Mercedes-Benz",
+      "model": "EQE",
+      "trim": "350+",
+      "year": 2024,
+      "batteryCapacityKWh": 90.6,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 170,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.5,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 68
+        },
+        {
+          "soc": 10,
+          "kw": 144.5
+        },
+        {
+          "soc": 20,
+          "kw": 170
+        },
+        {
+          "soc": 30,
+          "kw": 170
+        },
+        {
+          "soc": 40,
+          "kw": 153
+        },
+        {
+          "soc": 50,
+          "kw": 127.5
+        },
+        {
+          "soc": 60,
+          "kw": 102
+        },
+        {
+          "soc": 70,
+          "kw": 76.5
+        },
+        {
+          "soc": 80,
+          "kw": 51
+        },
+        {
+          "soc": 90,
+          "kw": 34
+        },
+        {
+          "soc": 100,
+          "kw": 17
+        }
+      ],
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
@@ -792,11 +3659,194 @@
           "kw": 20
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "porsche-taycan-2024",
+      "id": "audi-q4-etron-45-2024",
+      "make": "Audi",
+      "model": "Q4 e-tron",
+      "trim": "45 quattro AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 82,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 175,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 70
+        },
+        {
+          "soc": 10,
+          "kw": 148.8
+        },
+        {
+          "soc": 20,
+          "kw": 175
+        },
+        {
+          "soc": 30,
+          "kw": 175
+        },
+        {
+          "soc": 40,
+          "kw": 157.5
+        },
+        {
+          "soc": 50,
+          "kw": 131.3
+        },
+        {
+          "soc": 60,
+          "kw": 105
+        },
+        {
+          "soc": 70,
+          "kw": 78.8
+        },
+        {
+          "soc": 80,
+          "kw": 52.5
+        },
+        {
+          "soc": 90,
+          "kw": 35
+        },
+        {
+          "soc": 100,
+          "kw": 17.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "audi-q4-etron-50-2024",
+      "make": "Audi",
+      "model": "Q4 e-tron",
+      "trim": "50 quattro",
+      "year": 2024,
+      "batteryCapacityKWh": 76.6,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 135,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 54
+        },
+        {
+          "soc": 10,
+          "kw": 114.8
+        },
+        {
+          "soc": 20,
+          "kw": 135
+        },
+        {
+          "soc": 30,
+          "kw": 135
+        },
+        {
+          "soc": 40,
+          "kw": 121.5
+        },
+        {
+          "soc": 50,
+          "kw": 101.3
+        },
+        {
+          "soc": 60,
+          "kw": 81
+        },
+        {
+          "soc": 70,
+          "kw": 60.8
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "audi-etron-gt-quattro-2024",
+      "make": "Audi",
+      "model": "e-tron GT",
+      "trim": "quattro (800V)",
+      "year": 2024,
+      "batteryCapacityKWh": 93.4,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 270,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.5,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 148.5
+        },
+        {
+          "soc": 10,
+          "kw": 256.5
+        },
+        {
+          "soc": 20,
+          "kw": 270
+        },
+        {
+          "soc": 30,
+          "kw": 270
+        },
+        {
+          "soc": 40,
+          "kw": 270
+        },
+        {
+          "soc": 50,
+          "kw": 256.5
+        },
+        {
+          "soc": 60,
+          "kw": 229.5
+        },
+        {
+          "soc": 70,
+          "kw": 189
+        },
+        {
+          "soc": 80,
+          "kw": 135
+        },
+        {
+          "soc": 90,
+          "kw": 94.5
+        },
+        {
+          "soc": 100,
+          "kw": 54
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "porsche-taycan-4s-2024",
       "make": "Porsche",
       "model": "Taycan",
       "trim": "4S (800V)",
@@ -853,190 +3903,129 @@
           "kw": 54
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "rivian-r1t-large-2024",
-      "make": "Rivian",
-      "model": "R1T",
-      "trim": "Large Pack",
+      "id": "porsche-taycan-turbo-2024",
+      "make": "Porsche",
+      "model": "Taycan",
+      "trim": "Turbo (800V)",
       "year": 2024,
-      "batteryCapacityKWh": 135,
-      "acMaxPowerKW": 11.5,
-      "dcMaxPowerKW": 220,
-      "acEfficiency": 0.88,
-      "dcEfficiency": 0.93,
-      "idleOverheadKW": 0.7,
-      "dcChargingCurve": [
-        {
-          "soc": 0,
-          "kw": 88
-        },
-        {
-          "soc": 10,
-          "kw": 187
-        },
-        {
-          "soc": 20,
-          "kw": 220
-        },
-        {
-          "soc": 30,
-          "kw": 220
-        },
-        {
-          "soc": 40,
-          "kw": 198
-        },
-        {
-          "soc": 50,
-          "kw": 165
-        },
-        {
-          "soc": 60,
-          "kw": 132
-        },
-        {
-          "soc": 70,
-          "kw": 99
-        },
-        {
-          "soc": 80,
-          "kw": 66
-        },
-        {
-          "soc": 90,
-          "kw": 44
-        },
-        {
-          "soc": 100,
-          "kw": 22
-        }
-      ],
-      "lastUpdated": "2026-01-01",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
-    },
-    {
-      "id": "vw-id4-pro-2024",
-      "make": "Volkswagen",
-      "model": "ID.4",
-      "trim": "Pro RWD",
-      "year": 2024,
-      "batteryCapacityKWh": 77,
+      "batteryCapacityKWh": 93.4,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 135,
-      "acEfficiency": 0.88,
-      "dcEfficiency": 0.93,
-      "idleOverheadKW": 0.4,
+      "dcMaxPowerKW": 270,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.55,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 54
+          "kw": 148.5
         },
         {
           "soc": 10,
-          "kw": 114.8
+          "kw": 256.5
         },
         {
           "soc": 20,
-          "kw": 135
+          "kw": 270
         },
         {
           "soc": 30,
-          "kw": 135
+          "kw": 270
         },
         {
           "soc": 40,
-          "kw": 121.5
+          "kw": 270
         },
         {
           "soc": 50,
-          "kw": 101.3
+          "kw": 256.5
         },
         {
           "soc": 60,
-          "kw": 81
+          "kw": 229.5
         },
         {
           "soc": 70,
-          "kw": 60.8
+          "kw": 189
         },
         {
           "soc": 80,
-          "kw": 40.5
+          "kw": 135
         },
         {
           "soc": 90,
-          "kw": 27
+          "kw": 94.5
         },
         {
           "soc": 100,
-          "kw": 13.5
+          "kw": 54
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "toyota-bz4x-2024",
-      "make": "Toyota",
-      "model": "bZ4X",
-      "trim": "XLE AWD",
+      "id": "porsche-macan-electric-2024",
+      "make": "Porsche",
+      "model": "Macan Electric",
+      "trim": "4S (800V)",
       "year": 2024,
-      "batteryCapacityKWh": 71.4,
-      "acMaxPowerKW": 6.6,
-      "dcMaxPowerKW": 150,
-      "acEfficiency": 0.87,
-      "dcEfficiency": 0.92,
-      "idleOverheadKW": 0.4,
+      "batteryCapacityKWh": 100,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 270,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.95,
+      "idleOverheadKW": 0.55,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 75
+          "kw": 148.5
         },
         {
           "soc": 10,
-          "kw": 135
+          "kw": 256.5
         },
         {
           "soc": 20,
-          "kw": 150
+          "kw": 270
         },
         {
           "soc": 30,
-          "kw": 142.5
+          "kw": 270
         },
         {
           "soc": 40,
-          "kw": 112.5
+          "kw": 270
         },
         {
           "soc": 50,
-          "kw": 82.5
+          "kw": 256.5
         },
         {
           "soc": 60,
-          "kw": 60
+          "kw": 229.5
         },
         {
           "soc": 70,
-          "kw": 45
+          "kw": 189
         },
         {
           "soc": 80,
-          "kw": 30
+          "kw": 135
         },
         {
           "soc": 90,
-          "kw": 22.5
+          "kw": 94.5
         },
         {
           "soc": 100,
-          "kw": 15
+          "kw": 54
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
@@ -1097,7 +4086,1471 @@
           "kw": 20.5
         }
       ],
-      "lastUpdated": "2026-01-01",
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "polestar-3-2024",
+      "make": "Polestar",
+      "model": "3",
+      "trim": "Long Range Dual Motor",
+      "year": 2024,
+      "batteryCapacityKWh": 111,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 250,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.55,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 100
+        },
+        {
+          "soc": 10,
+          "kw": 212.5
+        },
+        {
+          "soc": 20,
+          "kw": 250
+        },
+        {
+          "soc": 30,
+          "kw": 250
+        },
+        {
+          "soc": 40,
+          "kw": 225
+        },
+        {
+          "soc": 50,
+          "kw": 187.5
+        },
+        {
+          "soc": 60,
+          "kw": 150
+        },
+        {
+          "soc": 70,
+          "kw": 112.5
+        },
+        {
+          "soc": 80,
+          "kw": 75
+        },
+        {
+          "soc": 90,
+          "kw": 50
+        },
+        {
+          "soc": 100,
+          "kw": 25
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "polestar-4-2024",
+      "make": "Polestar",
+      "model": "4",
+      "trim": "Long Range Single Motor",
+      "year": 2024,
+      "batteryCapacityKWh": 94,
+      "acMaxPowerKW": 22,
+      "dcMaxPowerKW": 200,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 110
+        },
+        {
+          "soc": 10,
+          "kw": 190
+        },
+        {
+          "soc": 20,
+          "kw": 200
+        },
+        {
+          "soc": 30,
+          "kw": 200
+        },
+        {
+          "soc": 40,
+          "kw": 200
+        },
+        {
+          "soc": 50,
+          "kw": 190
+        },
+        {
+          "soc": 60,
+          "kw": 170
+        },
+        {
+          "soc": 70,
+          "kw": 140
+        },
+        {
+          "soc": 80,
+          "kw": 100
+        },
+        {
+          "soc": 90,
+          "kw": 70
+        },
+        {
+          "soc": 100,
+          "kw": 40
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "cupra-born-58-2024",
+      "make": "Cupra",
+      "model": "Born",
+      "trim": "58 kWh",
+      "year": 2024,
+      "batteryCapacityKWh": 58,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 120,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 48
+        },
+        {
+          "soc": 10,
+          "kw": 102
+        },
+        {
+          "soc": 20,
+          "kw": 120
+        },
+        {
+          "soc": 30,
+          "kw": 120
+        },
+        {
+          "soc": 40,
+          "kw": 108
+        },
+        {
+          "soc": 50,
+          "kw": 90
+        },
+        {
+          "soc": 60,
+          "kw": 72
+        },
+        {
+          "soc": 70,
+          "kw": 54
+        },
+        {
+          "soc": 80,
+          "kw": 36
+        },
+        {
+          "soc": 90,
+          "kw": 24
+        },
+        {
+          "soc": 100,
+          "kw": 12
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "cupra-born-77-2024",
+      "make": "Cupra",
+      "model": "Born",
+      "trim": "77 kWh",
+      "year": 2024,
+      "batteryCapacityKWh": 77,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 135,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 54
+        },
+        {
+          "soc": 10,
+          "kw": 114.8
+        },
+        {
+          "soc": 20,
+          "kw": 135
+        },
+        {
+          "soc": 30,
+          "kw": 135
+        },
+        {
+          "soc": 40,
+          "kw": 121.5
+        },
+        {
+          "soc": 50,
+          "kw": 101.3
+        },
+        {
+          "soc": 60,
+          "kw": 81
+        },
+        {
+          "soc": 70,
+          "kw": 60.8
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mini-cooper-e-2024",
+      "make": "Mini",
+      "model": "Cooper Electric",
+      "trim": "E",
+      "year": 2024,
+      "batteryCapacityKWh": 40.7,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 75,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.25,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 30
+        },
+        {
+          "soc": 10,
+          "kw": 63.8
+        },
+        {
+          "soc": 20,
+          "kw": 75
+        },
+        {
+          "soc": 30,
+          "kw": 75
+        },
+        {
+          "soc": 40,
+          "kw": 67.5
+        },
+        {
+          "soc": 50,
+          "kw": 56.3
+        },
+        {
+          "soc": 60,
+          "kw": 45
+        },
+        {
+          "soc": 70,
+          "kw": 33.8
+        },
+        {
+          "soc": 80,
+          "kw": 22.5
+        },
+        {
+          "soc": 90,
+          "kw": 15
+        },
+        {
+          "soc": 100,
+          "kw": 7.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mini-cooper-se-2024",
+      "make": "Mini",
+      "model": "Cooper Electric",
+      "trim": "SE",
+      "year": 2024,
+      "batteryCapacityKWh": 54.2,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 95,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 38
+        },
+        {
+          "soc": 10,
+          "kw": 80.8
+        },
+        {
+          "soc": 20,
+          "kw": 95
+        },
+        {
+          "soc": 30,
+          "kw": 95
+        },
+        {
+          "soc": 40,
+          "kw": 85.5
+        },
+        {
+          "soc": 50,
+          "kw": 71.3
+        },
+        {
+          "soc": 60,
+          "kw": 57
+        },
+        {
+          "soc": 70,
+          "kw": 42.8
+        },
+        {
+          "soc": 80,
+          "kw": 28.5
+        },
+        {
+          "soc": 90,
+          "kw": 19
+        },
+        {
+          "soc": 100,
+          "kw": 9.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "peugeot-e2008-2024",
+      "make": "Peugeot",
+      "model": "e-2008",
+      "trim": "GT",
+      "year": 2024,
+      "batteryCapacityKWh": 54,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 100,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40
+        },
+        {
+          "soc": 10,
+          "kw": 85
+        },
+        {
+          "soc": 20,
+          "kw": 100
+        },
+        {
+          "soc": 30,
+          "kw": 100
+        },
+        {
+          "soc": 40,
+          "kw": 90
+        },
+        {
+          "soc": 50,
+          "kw": 75
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 45
+        },
+        {
+          "soc": 80,
+          "kw": 30
+        },
+        {
+          "soc": 90,
+          "kw": 20
+        },
+        {
+          "soc": 100,
+          "kw": 10
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "vw-id4-pro-2024",
+      "make": "Volkswagen",
+      "model": "ID.4",
+      "trim": "Pro RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 77,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 135,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 54
+        },
+        {
+          "soc": 10,
+          "kw": 114.8
+        },
+        {
+          "soc": 20,
+          "kw": 135
+        },
+        {
+          "soc": 30,
+          "kw": 135
+        },
+        {
+          "soc": 40,
+          "kw": 121.5
+        },
+        {
+          "soc": 50,
+          "kw": 101.3
+        },
+        {
+          "soc": 60,
+          "kw": 81
+        },
+        {
+          "soc": 70,
+          "kw": 60.8
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "vw-id4-gtx-2024",
+      "make": "Volkswagen",
+      "model": "ID.4",
+      "trim": "GTX AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 77,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 135,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 54
+        },
+        {
+          "soc": 10,
+          "kw": 114.8
+        },
+        {
+          "soc": 20,
+          "kw": 135
+        },
+        {
+          "soc": 30,
+          "kw": 135
+        },
+        {
+          "soc": 40,
+          "kw": 121.5
+        },
+        {
+          "soc": 50,
+          "kw": 101.3
+        },
+        {
+          "soc": 60,
+          "kw": 81
+        },
+        {
+          "soc": 70,
+          "kw": 60.8
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "renault-megane-etech-2024",
+      "make": "Renault",
+      "model": "Megane E-Tech",
+      "trim": "EV60",
+      "year": 2024,
+      "batteryCapacityKWh": 60,
+      "acMaxPowerKW": 22,
+      "dcMaxPowerKW": 130,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 52
+        },
+        {
+          "soc": 10,
+          "kw": 110.5
+        },
+        {
+          "soc": 20,
+          "kw": 130
+        },
+        {
+          "soc": 30,
+          "kw": 130
+        },
+        {
+          "soc": 40,
+          "kw": 117
+        },
+        {
+          "soc": 50,
+          "kw": 97.5
+        },
+        {
+          "soc": 60,
+          "kw": 78
+        },
+        {
+          "soc": 70,
+          "kw": 58.5
+        },
+        {
+          "soc": 80,
+          "kw": 39
+        },
+        {
+          "soc": 90,
+          "kw": 26
+        },
+        {
+          "soc": 100,
+          "kw": 13
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "skoda-enyaq-2024",
+      "make": "Skoda",
+      "model": "Enyaq",
+      "trim": "Long Range",
+      "year": 2024,
+      "batteryCapacityKWh": 77,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 135,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 54
+        },
+        {
+          "soc": 10,
+          "kw": 114.8
+        },
+        {
+          "soc": 20,
+          "kw": 135
+        },
+        {
+          "soc": 30,
+          "kw": 135
+        },
+        {
+          "soc": 40,
+          "kw": 121.5
+        },
+        {
+          "soc": 50,
+          "kw": 101.3
+        },
+        {
+          "soc": 60,
+          "kw": 81
+        },
+        {
+          "soc": 70,
+          "kw": 60.8
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "nissan-leaf-40-2023",
+      "make": "Nissan",
+      "model": "Leaf",
+      "trim": "40 kWh",
+      "year": 2023,
+      "batteryCapacityKWh": 39,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 50,
+      "acEfficiency": 0.86,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.2,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 25
+        },
+        {
+          "soc": 10,
+          "kw": 45
+        },
+        {
+          "soc": 20,
+          "kw": 50
+        },
+        {
+          "soc": 30,
+          "kw": 47.5
+        },
+        {
+          "soc": 40,
+          "kw": 37.5
+        },
+        {
+          "soc": 50,
+          "kw": 27.5
+        },
+        {
+          "soc": 60,
+          "kw": 20
+        },
+        {
+          "soc": 70,
+          "kw": 15
+        },
+        {
+          "soc": 80,
+          "kw": 10
+        },
+        {
+          "soc": 90,
+          "kw": 7.5
+        },
+        {
+          "soc": 100,
+          "kw": 5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "nissan-leaf-e-plus-2023",
+      "make": "Nissan",
+      "model": "Leaf",
+      "trim": "e+ SV",
+      "year": 2023,
+      "batteryCapacityKWh": 59,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 100,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.25,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 50
+        },
+        {
+          "soc": 10,
+          "kw": 90
+        },
+        {
+          "soc": 20,
+          "kw": 100
+        },
+        {
+          "soc": 30,
+          "kw": 95
+        },
+        {
+          "soc": 40,
+          "kw": 75
+        },
+        {
+          "soc": 50,
+          "kw": 55
+        },
+        {
+          "soc": 60,
+          "kw": 40
+        },
+        {
+          "soc": 70,
+          "kw": 30
+        },
+        {
+          "soc": 80,
+          "kw": 20
+        },
+        {
+          "soc": 90,
+          "kw": 15
+        },
+        {
+          "soc": 100,
+          "kw": 10
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "nissan-ariya-63-2023",
+      "make": "Nissan",
+      "model": "Ariya",
+      "trim": "63 kWh FWD",
+      "year": 2023,
+      "batteryCapacityKWh": 63,
+      "acMaxPowerKW": 7.4,
+      "dcMaxPowerKW": 130,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 52
+        },
+        {
+          "soc": 10,
+          "kw": 110.5
+        },
+        {
+          "soc": 20,
+          "kw": 130
+        },
+        {
+          "soc": 30,
+          "kw": 130
+        },
+        {
+          "soc": 40,
+          "kw": 117
+        },
+        {
+          "soc": 50,
+          "kw": 97.5
+        },
+        {
+          "soc": 60,
+          "kw": 78
+        },
+        {
+          "soc": 70,
+          "kw": 58.5
+        },
+        {
+          "soc": 80,
+          "kw": 39
+        },
+        {
+          "soc": 90,
+          "kw": 26
+        },
+        {
+          "soc": 100,
+          "kw": 13
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "nissan-ariya-87-e4orce-2023",
+      "make": "Nissan",
+      "model": "Ariya",
+      "trim": "87 kWh e-4ORCE AWD",
+      "year": 2023,
+      "batteryCapacityKWh": 87,
+      "acMaxPowerKW": 7.4,
+      "dcMaxPowerKW": 130,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 52
+        },
+        {
+          "soc": 10,
+          "kw": 110.5
+        },
+        {
+          "soc": 20,
+          "kw": 130
+        },
+        {
+          "soc": 30,
+          "kw": 130
+        },
+        {
+          "soc": 40,
+          "kw": 117
+        },
+        {
+          "soc": 50,
+          "kw": 97.5
+        },
+        {
+          "soc": 60,
+          "kw": 78
+        },
+        {
+          "soc": 70,
+          "kw": 58.5
+        },
+        {
+          "soc": 80,
+          "kw": 39
+        },
+        {
+          "soc": 90,
+          "kw": 26
+        },
+        {
+          "soc": 100,
+          "kw": 13
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "toyota-bz4x-fwd-2024",
+      "make": "Toyota",
+      "model": "bZ4X",
+      "trim": "FWD",
+      "year": 2024,
+      "batteryCapacityKWh": 71.4,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.35,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 75
+        },
+        {
+          "soc": 10,
+          "kw": 135
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 142.5
+        },
+        {
+          "soc": 40,
+          "kw": 112.5
+        },
+        {
+          "soc": 50,
+          "kw": 82.5
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 45
+        },
+        {
+          "soc": 80,
+          "kw": 30
+        },
+        {
+          "soc": 90,
+          "kw": 22.5
+        },
+        {
+          "soc": 100,
+          "kw": 15
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "toyota-bz4x-awd-2024",
+      "make": "Toyota",
+      "model": "bZ4X",
+      "trim": "AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 71.4,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.87,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 75
+        },
+        {
+          "soc": 10,
+          "kw": 135
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 142.5
+        },
+        {
+          "soc": 40,
+          "kw": 112.5
+        },
+        {
+          "soc": 50,
+          "kw": 82.5
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 45
+        },
+        {
+          "soc": 80,
+          "kw": 30
+        },
+        {
+          "soc": 90,
+          "kw": 22.5
+        },
+        {
+          "soc": 100,
+          "kw": 15
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "mazda-mx30-2023",
+      "make": "Mazda",
+      "model": "MX-30",
+      "trim": "EV",
+      "year": 2023,
+      "batteryCapacityKWh": 35.5,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 50,
+      "acEfficiency": 0.86,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.2,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 25
+        },
+        {
+          "soc": 10,
+          "kw": 45
+        },
+        {
+          "soc": 20,
+          "kw": 50
+        },
+        {
+          "soc": 30,
+          "kw": 47.5
+        },
+        {
+          "soc": 40,
+          "kw": 37.5
+        },
+        {
+          "soc": 50,
+          "kw": 27.5
+        },
+        {
+          "soc": 60,
+          "kw": 20
+        },
+        {
+          "soc": 70,
+          "kw": 15
+        },
+        {
+          "soc": 80,
+          "kw": 10
+        },
+        {
+          "soc": 90,
+          "kw": 7.5
+        },
+        {
+          "soc": 100,
+          "kw": 5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "lexus-rz450e-2024",
+      "make": "Lexus",
+      "model": "RZ",
+      "trim": "450e",
+      "year": 2024,
+      "batteryCapacityKWh": 71.4,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 75
+        },
+        {
+          "soc": 10,
+          "kw": 135
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 142.5
+        },
+        {
+          "soc": 40,
+          "kw": 112.5
+        },
+        {
+          "soc": 50,
+          "kw": 82.5
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 45
+        },
+        {
+          "soc": 80,
+          "kw": 30
+        },
+        {
+          "soc": 90,
+          "kw": 22.5
+        },
+        {
+          "soc": 100,
+          "kw": 15
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "honda-e-2022",
+      "make": "Honda",
+      "model": "e",
+      "trim": "Advance",
+      "year": 2022,
+      "batteryCapacityKWh": 35.5,
+      "acMaxPowerKW": 6.6,
+      "dcMaxPowerKW": 50,
+      "acEfficiency": 0.86,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.2,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 25
+        },
+        {
+          "soc": 10,
+          "kw": 45
+        },
+        {
+          "soc": 20,
+          "kw": 50
+        },
+        {
+          "soc": 30,
+          "kw": 47.5
+        },
+        {
+          "soc": 40,
+          "kw": 37.5
+        },
+        {
+          "soc": 50,
+          "kw": 27.5
+        },
+        {
+          "soc": 60,
+          "kw": 20
+        },
+        {
+          "soc": 70,
+          "kw": 15
+        },
+        {
+          "soc": 80,
+          "kw": 10
+        },
+        {
+          "soc": 90,
+          "kw": 7.5
+        },
+        {
+          "soc": 100,
+          "kw": 5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "ford-mache-er-2024",
+      "make": "Ford",
+      "model": "Mustang Mach-E",
+      "trim": "Extended Range AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 91,
+      "acMaxPowerKW": 10.5,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.5,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 60
+        },
+        {
+          "soc": 10,
+          "kw": 127.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 135
+        },
+        {
+          "soc": 50,
+          "kw": 112.5
+        },
+        {
+          "soc": 60,
+          "kw": 90
+        },
+        {
+          "soc": 70,
+          "kw": 67.5
+        },
+        {
+          "soc": 80,
+          "kw": 45
+        },
+        {
+          "soc": 90,
+          "kw": 30
+        },
+        {
+          "soc": 100,
+          "kw": 15
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "chevrolet-bolt-euv-2023",
+      "make": "Chevrolet",
+      "model": "Bolt EUV",
+      "trim": "Premier",
+      "year": 2023,
+      "batteryCapacityKWh": 65,
+      "acMaxPowerKW": 11.5,
+      "dcMaxPowerKW": 55,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.91,
+      "idleOverheadKW": 0.3,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 27.5
+        },
+        {
+          "soc": 10,
+          "kw": 49.5
+        },
+        {
+          "soc": 20,
+          "kw": 55
+        },
+        {
+          "soc": 30,
+          "kw": 52.3
+        },
+        {
+          "soc": 40,
+          "kw": 41.3
+        },
+        {
+          "soc": 50,
+          "kw": 30.3
+        },
+        {
+          "soc": 60,
+          "kw": 22
+        },
+        {
+          "soc": 70,
+          "kw": 16.5
+        },
+        {
+          "soc": 80,
+          "kw": 11
+        },
+        {
+          "soc": 90,
+          "kw": 8.3
+        },
+        {
+          "soc": 100,
+          "kw": 5.5
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "cadillac-lyriq-2024",
+      "make": "Cadillac",
+      "model": "Lyriq",
+      "trim": "AWD",
+      "year": 2024,
+      "batteryCapacityKWh": 102,
+      "acMaxPowerKW": 11.5,
+      "dcMaxPowerKW": 190,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.55,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 76
+        },
+        {
+          "soc": 10,
+          "kw": 161.5
+        },
+        {
+          "soc": 20,
+          "kw": 190
+        },
+        {
+          "soc": 30,
+          "kw": 190
+        },
+        {
+          "soc": 40,
+          "kw": 171
+        },
+        {
+          "soc": 50,
+          "kw": 142.5
+        },
+        {
+          "soc": 60,
+          "kw": 114
+        },
+        {
+          "soc": 70,
+          "kw": 85.5
+        },
+        {
+          "soc": 80,
+          "kw": 57
+        },
+        {
+          "soc": 90,
+          "kw": 38
+        },
+        {
+          "soc": 100,
+          "kw": 19
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "rivian-r1t-large-2024",
+      "make": "Rivian",
+      "model": "R1T",
+      "trim": "Large Pack",
+      "year": 2024,
+      "batteryCapacityKWh": 135,
+      "acMaxPowerKW": 11.5,
+      "dcMaxPowerKW": 220,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.93,
+      "idleOverheadKW": 0.7,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 88
+        },
+        {
+          "soc": 10,
+          "kw": 187
+        },
+        {
+          "soc": 20,
+          "kw": 220
+        },
+        {
+          "soc": 30,
+          "kw": 220
+        },
+        {
+          "soc": 40,
+          "kw": 198
+        },
+        {
+          "soc": 50,
+          "kw": 165
+        },
+        {
+          "soc": 60,
+          "kw": 132
+        },
+        {
+          "soc": 70,
+          "kw": 99
+        },
+        {
+          "soc": 80,
+          "kw": 66
+        },
+        {
+          "soc": 90,
+          "kw": 44
+        },
+        {
+          "soc": 100,
+          "kw": 22
+        }
+      ],
+      "lastUpdated": "2026-09-09",
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     }
   ]

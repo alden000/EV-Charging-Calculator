@@ -1,8 +1,12 @@
 import type { ChargerType } from "../lib/chargingModel";
 import { Card } from "./Card";
 
-const AC_PRESETS = [3.7, 7.4, 11, 22];
-const DC_PRESETS = [50, 100, 150, 250, 350];
+// AC: 3-pin/granny trickle, single-phase 7.4kW (common SG condo/landed wallbox),
+// 3-phase 11kW and 22kW (commercial / higher-amperage home installs).
+const AC_PRESETS = [1.8, 3.6, 7.4, 11, 22];
+// DC: covers slow CHAdeMO/older CCS (25-60kW), common SG public tiers (60-120kW),
+// and modern high-power chargers (150-350kW).
+const DC_PRESETS = [25, 50, 60, 90, 120, 150, 180, 250, 350];
 
 export function ChargerInputs({
   chargerType,

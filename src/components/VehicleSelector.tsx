@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { EvVehicle } from "../data/types";
 import { Card } from "./Card";
 
@@ -10,17 +11,31 @@ export function VehicleSelector({
   vehicle: EvVehicle;
   onChange: (id: string) => void;
 }) {
+  const groups = useMemo(() => {
+    const byMake = new Map<string, EvVehicle[]>();
+    for (const v of vehicles) {
+      const list = byMake.get(v.make) ?? [];
+      list.push(v);
+      byMake.set(v.make, list);
+    }
+    return Array.from(byMake.entries()).sort(([a], [b]) => a.localeCompare(b));
+  }, [vehicles]);
+
   return (
-    <Card title="Vehicle">
+    <Card title={`Vehicle (${vehicles.length} models)`}>
       <select
         value={vehicle.id}
         onChange={(e) => onChange(e.target.value)}
         className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
       >
-        {vehicles.map((v) => (
-          <option key={v.id} value={v.id}>
-            {v.make} {v.model} — {v.trim} ({v.year})
-          </option>
+        {groups.map(([make, models]) => (
+          <optgroup key={make} label={make}>
+            {models.map((v) => (
+              <option key={v.id} value={v.id}>
+                {v.model} — {v.trim} ({v.year})
+              </option>
+            ))}
+          </optgroup>
         ))}
       </select>
 
