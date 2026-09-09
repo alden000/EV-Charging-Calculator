@@ -11,7 +11,18 @@ export function ResultsSummary({
   currencySymbol: string;
   parkingEnabled: boolean;
 }) {
-  const { sample, overheadEnergyKWh, conversionLossKWh, energyCost, parkingCost, totalCost, completionTime, averagePowerKW } = estimate;
+  const {
+    sample,
+    overheadEnergyKWh,
+    conversionLossKWh,
+    energyCost,
+    parkingCost,
+    totalCost,
+    completionTime,
+    averagePowerKW,
+    effectiveCostPerKWhSource,
+    effectiveCostPerKWhBattery,
+  } = estimate;
 
   return (
     <Card title="Estimate" className="border-emerald-200 dark:border-emerald-900/60">
@@ -41,6 +52,22 @@ export function ResultsSummary({
           <BreakdownRow label="Average charge rate" value={`${averagePowerKW.toFixed(1)} kW`} />
           <BreakdownRow label="Energy cost" value={formatCurrency(energyCost, currencySymbol)} />
           {parkingEnabled && <BreakdownRow label="Parking / session fee" value={formatCurrency(parkingCost, currencySymbol)} />}
+        </div>
+      </div>
+
+      <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-800">
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          Effective price per kWh
+        </h3>
+        <div className="space-y-1.5 text-sm">
+          <BreakdownRow
+            label={parkingEnabled ? "$/kWh from source (incl. parking)" : "$/kWh from source"}
+            value={`${formatCurrency(effectiveCostPerKWhSource, currencySymbol)}/kWh`}
+          />
+          <BreakdownRow
+            label={parkingEnabled ? "$/kWh to battery (incl. parking + losses)" : "$/kWh to battery (incl. losses)"}
+            value={`${formatCurrency(effectiveCostPerKWhBattery, currencySymbol)}/kWh`}
+          />
         </div>
       </div>
     </Card>

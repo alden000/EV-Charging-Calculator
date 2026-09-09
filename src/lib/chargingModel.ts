@@ -33,6 +33,10 @@ export interface ChargingEstimate {
   totalCost: number;
   completionTime: Date;
   averagePowerKW: number;
+  /** totalCost / wallEnergyKWh — effective rate per kWh drawn from the source, with any parking fee blended in. */
+  effectiveCostPerKWhSource: number;
+  /** totalCost / batteryEnergyKWh — effective rate per kWh that actually reaches the battery, factoring in conversion losses, overhead, and parking. Always >= effectiveCostPerKWhSource. */
+  effectiveCostPerKWhBattery: number;
 }
 
 function interpolateCurve(curve: ChargeCurvePoint[], soc: number): number {
@@ -202,7 +206,20 @@ export function buildEstimate(
   const totalCost = energyCost + parkingCost;
   const completionTime = new Date(startTime.getTime() + sample.elapsedHours * 3600 * 1000);
   const averagePowerKW = sample.elapsedHours > 0 ? sample.batteryEnergyKWh / sample.elapsedHours : 0;
-  return { sample, overheadEnergyKWh, conversionLossKWh, energyCost, parkingCost, totalCost, completionTime, averagePowerKW };
+  const effectiveCostPerKWhSource = sample.wallEnergyKWh > 0 ? totalCost / sample.wallEnergyKWh : 0;
+  const effectiveCostPerKWhBattery = sample.batteryEnergyKWh > 0 ? totalCost / sample.batteryEnergyKWh : 0;
+  return {
+    sample,
+    overheadEnergyKWh,
+    conversionLossKWh,
+    energyCost,
+    parkingCost,
+    totalCost,
+    completionTime,
+    averagePowerKW,
+    effectiveCostPerKWhSource,
+    effectiveCostPerKWhBattery,
+  };
 }
 
 function clamp(value: number, min: number, max: number): number {
