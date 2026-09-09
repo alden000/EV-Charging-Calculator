@@ -18,13 +18,16 @@ export function ResultsSummary({
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Stat label="Charging time" value={formatDurationHours(sample.elapsedHours)} big />
         <Stat label="Done by" value={formatDateTime(completionTime)} big />
-        <Stat label="Added to battery" value={formatKWh(sample.batteryEnergyKWh)} big />
+        <Stat label="From the source" value={formatKWh(sample.wallEnergyKWh)} big accent="text-sky-600 dark:text-sky-400" />
         <Stat label="Total cost" value={formatCurrency(totalCost, currencySymbol)} big accent="text-emerald-600 dark:text-emerald-400" />
       </div>
+      <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+        Cost is billed on energy pulled from the source (what a meter or station charges you for), not just what reaches the battery.
+      </p>
 
-      <div className="mt-5 border-t border-slate-100 pt-4 dark:border-slate-800">
+      <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-800">
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          Energy pulled from the source: {formatKWh(sample.wallEnergyKWh)}
+          Where that energy goes
         </h3>
         <div className="space-y-1.5 text-sm">
           <BreakdownRow label="To battery" value={formatKWh(sample.batteryEnergyKWh)} />

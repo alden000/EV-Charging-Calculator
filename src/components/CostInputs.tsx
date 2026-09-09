@@ -69,7 +69,8 @@ export function CostInputs({
             inputMode="decimal"
             min={0}
             step={0.1}
-            value={parkingRatePerHour}
+            value={parkingRatePerHour === 0 ? "" : parkingRatePerHour}
+            placeholder="0"
             onChange={(e) => onParkingRateChange(Math.max(0, Number(e.target.value) || 0))}
             className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
           />
