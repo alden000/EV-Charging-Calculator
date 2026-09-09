@@ -430,10 +430,71 @@
       "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
     },
     {
-      "id": "byd-sealion7-2025",
+      "id": "byd-sealion7-dynamic-2025",
       "make": "BYD",
       "model": "Sealion 7",
-      "trim": "Premium AWD",
+      "trim": "Dynamic RWD",
+      "year": 2025,
+      "batteryCapacityKWh": 71.8,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.89,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 82.5
+        },
+        {
+          "soc": 10,
+          "kw": 142.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 150
+        },
+        {
+          "soc": 50,
+          "kw": 142.5
+        },
+        {
+          "soc": 60,
+          "kw": 127.5
+        },
+        {
+          "soc": 70,
+          "kw": 105
+        },
+        {
+          "soc": 80,
+          "kw": 75
+        },
+        {
+          "soc": 90,
+          "kw": 52.5
+        },
+        {
+          "soc": 100,
+          "kw": 30
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-sealion7-premium-2025",
+      "make": "BYD",
+      "model": "Sealion 7",
+      "trim": "Premium RWD",
       "year": 2025,
       "batteryCapacityKWh": 82.5,
       "acMaxPowerKW": 11,
@@ -441,6 +502,67 @@
       "acEfficiency": 0.9,
       "dcEfficiency": 0.94,
       "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 82.5
+        },
+        {
+          "soc": 10,
+          "kw": 142.5
+        },
+        {
+          "soc": 20,
+          "kw": 150
+        },
+        {
+          "soc": 30,
+          "kw": 150
+        },
+        {
+          "soc": 40,
+          "kw": 150
+        },
+        {
+          "soc": 50,
+          "kw": 142.5
+        },
+        {
+          "soc": 60,
+          "kw": 127.5
+        },
+        {
+          "soc": 70,
+          "kw": 105
+        },
+        {
+          "soc": 80,
+          "kw": 75
+        },
+        {
+          "soc": 90,
+          "kw": 52.5
+        },
+        {
+          "soc": 100,
+          "kw": 30
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-sealion7-performance-2025",
+      "make": "BYD",
+      "model": "Sealion 7",
+      "trim": "Performance AWD",
+      "year": 2025,
+      "batteryCapacityKWh": 82.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.5,
       "dcChargingCurve": [
         {
           "soc": 0,
@@ -851,6 +973,128 @@
         {
           "soc": 100,
           "kw": 6
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-m6-standard-2024",
+      "make": "BYD",
+      "model": "M6",
+      "trim": "Standard Range (MPV)",
+      "year": 2024,
+      "batteryCapacityKWh": 55.4,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 80,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.4,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 40
+        },
+        {
+          "soc": 10,
+          "kw": 76
+        },
+        {
+          "soc": 20,
+          "kw": 80
+        },
+        {
+          "soc": 30,
+          "kw": 80
+        },
+        {
+          "soc": 40,
+          "kw": 76
+        },
+        {
+          "soc": 50,
+          "kw": 68
+        },
+        {
+          "soc": 60,
+          "kw": 60
+        },
+        {
+          "soc": 70,
+          "kw": 48
+        },
+        {
+          "soc": 80,
+          "kw": 36
+        },
+        {
+          "soc": 90,
+          "kw": 24
+        },
+        {
+          "soc": 100,
+          "kw": 12
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+    },
+    {
+      "id": "byd-m6-superior-2024",
+      "make": "BYD",
+      "model": "M6",
+      "trim": "Superior / Long Range (MPV)",
+      "year": 2024,
+      "batteryCapacityKWh": 71.8,
+      "acMaxPowerKW": 7,
+      "dcMaxPowerKW": 90,
+      "acEfficiency": 0.88,
+      "dcEfficiency": 0.92,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 45
+        },
+        {
+          "soc": 10,
+          "kw": 85.5
+        },
+        {
+          "soc": 20,
+          "kw": 90
+        },
+        {
+          "soc": 30,
+          "kw": 90
+        },
+        {
+          "soc": 40,
+          "kw": 85.5
+        },
+        {
+          "soc": 50,
+          "kw": 76.5
+        },
+        {
+          "soc": 60,
+          "kw": 67.5
+        },
+        {
+          "soc": 70,
+          "kw": 54
+        },
+        {
+          "soc": 80,
+          "kw": 40.5
+        },
+        {
+          "soc": 90,
+          "kw": 27
+        },
+        {
+          "soc": 100,
+          "kw": 13.5
         }
       ],
       "lastUpdated": "2026-09-09",
