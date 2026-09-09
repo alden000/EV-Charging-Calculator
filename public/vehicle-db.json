@@ -628,51 +628,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 45
-        },
-        {
-          "soc": 10,
-          "kw": 85.5
+          "kw": 90
         },
         {
           "soc": 20,
           "kw": 90
         },
         {
-          "soc": 30,
-          "kw": 90
+          "soc": 20,
+          "kw": 68
         },
         {
           "soc": 40,
-          "kw": 85.5
+          "kw": 68
         },
         {
-          "soc": 50,
-          "kw": 76.5
+          "soc": 40,
+          "kw": 48
         },
         {
           "soc": 60,
-          "kw": 67.5
+          "kw": 48
         },
         {
-          "soc": 70,
-          "kw": 54
+          "soc": 60,
+          "kw": 32
         },
         {
           "soc": 80,
-          "kw": 40.5
+          "kw": 32
         },
         {
-          "soc": 90,
-          "kw": 27
+          "soc": 80,
+          "kw": 16
+        },
+        {
+          "soc": 95,
+          "kw": 16
+        },
+        {
+          "soc": 95,
+          "kw": 7
         },
         {
           "soc": 100,
-          "kw": 13.5
+          "kw": 7
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-songl-2025",
@@ -811,11 +815,11 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 60
+          "kw": 48
         },
         {
           "soc": 10,
-          "kw": 114
+          "kw": 102
         },
         {
           "soc": 20,
@@ -827,31 +831,31 @@
         },
         {
           "soc": 40,
-          "kw": 114
+          "kw": 108
         },
         {
           "soc": 50,
-          "kw": 102
-        },
-        {
-          "soc": 60,
           "kw": 90
         },
         {
-          "soc": 70,
+          "soc": 60,
           "kw": 72
         },
         {
-          "soc": 80,
+          "soc": 70,
           "kw": 54
         },
         {
-          "soc": 90,
+          "soc": 80,
           "kw": 36
         },
         {
+          "soc": 90,
+          "kw": 24
+        },
+        {
           "soc": 100,
-          "kw": 18
+          "kw": 12
         }
       ],
       "lastUpdated": "2026-09-09",
@@ -865,54 +869,54 @@
       "year": 2024,
       "batteryCapacityKWh": 85.4,
       "acMaxPowerKW": 11,
-      "dcMaxPowerKW": 150,
+      "dcMaxPowerKW": 120,
       "acEfficiency": 0.9,
       "dcEfficiency": 0.94,
       "idleOverheadKW": 0.45,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 75
+          "kw": 48
         },
         {
           "soc": 10,
-          "kw": 142.5
+          "kw": 102
         },
         {
           "soc": 20,
-          "kw": 150
+          "kw": 120
         },
         {
           "soc": 30,
-          "kw": 150
+          "kw": 120
         },
         {
           "soc": 40,
-          "kw": 142.5
+          "kw": 108
         },
         {
           "soc": 50,
-          "kw": 127.5
-        },
-        {
-          "soc": 60,
-          "kw": 112.5
-        },
-        {
-          "soc": 70,
           "kw": 90
         },
         {
+          "soc": 60,
+          "kw": 72
+        },
+        {
+          "soc": 70,
+          "kw": 54
+        },
+        {
           "soc": 80,
-          "kw": 67.5
+          "kw": 36
         },
         {
           "soc": 90,
-          "kw": 45
+          "kw": 24
         },
         {
           "soc": 100,
-          "kw": 22.5
+          "kw": 12
         }
       ],
       "lastUpdated": "2026-09-09",
@@ -987,54 +991,54 @@
       "year": 2024,
       "batteryCapacityKWh": 55.4,
       "acMaxPowerKW": 7,
-      "dcMaxPowerKW": 80,
+      "dcMaxPowerKW": 85,
       "acEfficiency": 0.88,
       "dcEfficiency": 0.92,
       "idleOverheadKW": 0.4,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 40
+          "kw": 42.5
         },
         {
           "soc": 10,
-          "kw": 76
+          "kw": 80.8
         },
         {
           "soc": 20,
-          "kw": 80
+          "kw": 85
         },
         {
           "soc": 30,
-          "kw": 80
+          "kw": 85
         },
         {
           "soc": 40,
-          "kw": 76
+          "kw": 80.8
         },
         {
           "soc": 50,
-          "kw": 68
+          "kw": 72.3
         },
         {
           "soc": 60,
-          "kw": 60
+          "kw": 63.8
         },
         {
           "soc": 70,
-          "kw": 48
+          "kw": 51
         },
         {
           "soc": 80,
-          "kw": 36
+          "kw": 38.3
         },
         {
           "soc": 90,
-          "kw": 24
+          "kw": 25.5
         },
         {
           "soc": 100,
-          "kw": 12
+          "kw": 12.8
         }
       ],
       "lastUpdated": "2026-09-09",
@@ -1048,54 +1052,54 @@
       "year": 2024,
       "batteryCapacityKWh": 71.8,
       "acMaxPowerKW": 7,
-      "dcMaxPowerKW": 90,
+      "dcMaxPowerKW": 115,
       "acEfficiency": 0.88,
       "dcEfficiency": 0.92,
       "idleOverheadKW": 0.45,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 45
+          "kw": 57.5
         },
         {
           "soc": 10,
-          "kw": 85.5
+          "kw": 109.3
         },
         {
           "soc": 20,
-          "kw": 90
+          "kw": 115
         },
         {
           "soc": 30,
-          "kw": 90
+          "kw": 115
         },
         {
           "soc": 40,
-          "kw": 85.5
+          "kw": 109.3
         },
         {
           "soc": 50,
-          "kw": 76.5
+          "kw": 97.8
         },
         {
           "soc": 60,
-          "kw": 67.5
+          "kw": 86.3
         },
         {
           "soc": 70,
-          "kw": 54
+          "kw": 69
         },
         {
           "soc": 80,
-          "kw": 40.5
+          "kw": 51.8
         },
         {
           "soc": 90,
-          "kw": 27
+          "kw": 34.5
         },
         {
           "soc": 100,
-          "kw": 13.5
+          "kw": 17.3
         }
       ],
       "lastUpdated": "2026-09-09",

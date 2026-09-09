@@ -237,7 +237,12 @@ const BYD: EvVehicle[] = [
       { upTo: 100, kw: 22.5 },
     ]),
   }),
-  veh({
+  // The domestic-China Song Plus EV is the same vehicle BYD exports as the Seal U (Wikipedia:
+  // "Since 2024, the Song Plus is exported overseas as the BYD Seal U and BYD Sealion 6") —
+  // same 71.8kWh Blade LFP pack. Reuses the Seal U Comfort's measured curve (ev-database.org
+  // Seal U Design 87kWh/140kW trim, scaled to 110kW for Comfort), scaled again to this trim's
+  // 90kW cap.
+  vehMeasured({
     id: "byd-songplus-2024",
     make: "BYD",
     model: "Song Plus EV",
@@ -249,7 +254,14 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(90, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 20, kw: 90 },
+      { upTo: 40, kw: 68 },
+      { upTo: 60, kw: 48 },
+      { upTo: 80, kw: 32 },
+      { upTo: 95, kw: 16 },
+      { upTo: 100, kw: 7 },
+    ]),
   }),
   veh({
     id: "byd-songl-2025",
@@ -284,6 +296,16 @@ const BYD: EvVehicle[] = [
     idleOverheadKW: 0.55,
     dcChargingCurve: curveFromShape(110, "gradualTaper"),
   }),
+  // ev-database.org and evkx.net both confirm the 85.4kWh AWD Performance Han (380kW/517PS
+  // motor, 3.9s 0-100) caps DC charging at 120kW, not 150kW as previously listed here — fixed
+  // below. ev-database's claimed spec (120kW peak, 85kW average 10-80%, 44min 10-80%) implies
+  // more taper than a flat plateau, so this uses "gradualTaper" instead of "teslaLfp". evkx.net
+  // also serves a per-SOC chart/table for the Han, but it is byte-for-byte identical to the one
+  // it serves for the unrelated Tang (different battery/motor) and contradicts this file's own
+  // sourced note on Tang's real (slow-ramp) behavior — treated as a generic model-tier template,
+  // not vehicle-specific measured data, so it is NOT used here despite looking like real test
+  // data. RWD trim's power cap is unverified (no independent source found for it specifically);
+  // shape corrected to match for consistency with the same platform/chemistry.
   veh({
     id: "byd-han-rwd-2024",
     make: "BYD",
@@ -296,7 +318,7 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(120, "teslaLfp"),
+    dcChargingCurve: curveFromShape(120, "gradualTaper"),
   }),
   veh({
     id: "byd-han-awd-performance-2024",
@@ -306,11 +328,11 @@ const BYD: EvVehicle[] = [
     year: 2024,
     batteryCapacityKWh: 85.4,
     acMaxPowerKW: 11,
-    dcMaxPowerKW: 150,
+    dcMaxPowerKW: 120,
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(150, "teslaLfp"),
+    dcChargingCurve: curveFromShape(120, "gradualTaper"),
   }),
   veh({
     id: "byd-e6-2023",
@@ -326,6 +348,10 @@ const BYD: EvVehicle[] = [
     idleOverheadKW: 0.4,
     dcChargingCurve: curveFromShape(60, "slowLegacy"),
   }),
+  // Power caps corrected per BYD's own regional spec sheet (reverautomotive.com/en/model/m6/tech-spec,
+  // mirroring bydcars.sg's published M6 spec sheet): Standard Range 85kW (was 80kW), Extended
+  // Range 115kW (was 90kW). No independent per-SOC breakpoint data found, so this stays a shape
+  // approximation.
   veh({
     id: "byd-m6-standard-2024",
     make: "BYD",
@@ -334,11 +360,11 @@ const BYD: EvVehicle[] = [
     year: 2024,
     batteryCapacityKWh: 55.4,
     acMaxPowerKW: 7,
-    dcMaxPowerKW: 80,
+    dcMaxPowerKW: 85,
     acEfficiency: 0.88,
     dcEfficiency: 0.92,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(80, "teslaLfp"),
+    dcChargingCurve: curveFromShape(85, "teslaLfp"),
   }),
   veh({
     id: "byd-m6-superior-2024",
@@ -348,11 +374,11 @@ const BYD: EvVehicle[] = [
     year: 2024,
     batteryCapacityKWh: 71.8,
     acMaxPowerKW: 7,
-    dcMaxPowerKW: 90,
+    dcMaxPowerKW: 115,
     acEfficiency: 0.88,
     dcEfficiency: 0.92,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(90, "teslaLfp"),
+    dcChargingCurve: curveFromShape(115, "teslaLfp"),
   }),
 ];
 
