@@ -51,7 +51,13 @@ function interpolateCurve(curve: ChargeCurvePoint[], soc: number): number {
   return last.kw;
 }
 
-function instantaneousBatteryPowerKW(inputs: ChargingInputs, soc: number): number {
+/**
+ * Power actually delivered BY the charger/source at this SOC — i.e. what a
+ * station meter or wall circuit reports. This is a hard physical cap: the
+ * curve value (DC) or AC rating can never be exceeded, so this is the
+ * ceiling everything else (efficiency, overhead) has to fit inside of.
+ */
+function instantaneousInputPowerKW(inputs: ChargingInputs, soc: number): number {
   const { vehicle, chargerType, chargerMaxPowerKW } = inputs;
   if (chargerType === "DC") {
     const curveKW = interpolateCurve(vehicle.dcChargingCurve, soc);
@@ -60,9 +66,17 @@ function instantaneousBatteryPowerKW(inputs: ChargingInputs, soc: number): numbe
   return Math.max(0, Math.min(chargerMaxPowerKW, vehicle.acMaxPowerKW));
 }
 
-function wallPowerForBatteryPowerKW(vehicle: EvVehicle, chargerType: ChargerType, batteryPowerKW: number): number {
+/**
+ * Power that actually reaches the battery pack, given a fixed input power:
+ * AC/DC conversion losses take a cut (efficiency < 1), and the vehicle's
+ * idle/overhead draw (climate control, battery conditioning, onboard
+ * computer, ...) is drawn from the same converted power budget before the
+ * remainder charges the pack. Both reduce battery power — neither can make
+ * the source deliver more than its rated cap.
+ */
+function batteryPowerFromInputKW(vehicle: EvVehicle, chargerType: ChargerType, inputPowerKW: number): number {
   const efficiency = chargerType === "DC" ? vehicle.dcEfficiency : vehicle.acEfficiency;
-  return batteryPowerKW / efficiency + vehicle.idleOverheadKW;
+  return Math.max(0, inputPowerKW * efficiency - vehicle.idleOverheadKW);
 }
 
 /**
@@ -80,15 +94,15 @@ export function simulateChargingTrajectory(
   const start = clamp(inputs.currentSocPercent, 0, 100);
   const end = clamp(endSocPercent, 0, 100);
 
-  const firstBatteryPower = instantaneousBatteryPowerKW(inputs, start);
+  const firstInputPower = instantaneousInputPowerKW(inputs, start);
   const samples: TrajectorySample[] = [
     {
       soc: start,
       elapsedHours: 0,
       batteryEnergyKWh: 0,
       wallEnergyKWh: 0,
-      powerToBatteryKW: firstBatteryPower,
-      wallPowerKW: wallPowerForBatteryPowerKW(vehicle, chargerType, firstBatteryPower),
+      powerToBatteryKW: batteryPowerFromInputKW(vehicle, chargerType, firstInputPower),
+      wallPowerKW: firstInputPower,
     },
   ];
 
@@ -102,8 +116,8 @@ export function simulateChargingTrajectory(
   while (soc < end - 1e-9) {
     const nextSoc = Math.min(end, soc + stepPercent);
     const midSoc = (soc + nextSoc) / 2;
-    const batteryPowerKW = instantaneousBatteryPowerKW(inputs, midSoc);
-    const wallPowerKW = wallPowerForBatteryPowerKW(vehicle, chargerType, batteryPowerKW);
+    const wallPowerKW = instantaneousInputPowerKW(inputs, midSoc);
+    const batteryPowerKW = batteryPowerFromInputKW(vehicle, chargerType, wallPowerKW);
 
     if (batteryPowerKW <= 1e-6) break;
 
@@ -115,13 +129,14 @@ export function simulateChargingTrajectory(
     wallEnergyKWh += wallPowerKW * dtHours;
     soc = nextSoc;
 
+    const endInputPower = instantaneousInputPowerKW(inputs, soc);
     samples.push({
       soc,
       elapsedHours,
       batteryEnergyKWh,
       wallEnergyKWh,
-      powerToBatteryKW: instantaneousBatteryPowerKW(inputs, soc),
-      wallPowerKW,
+      powerToBatteryKW: batteryPowerFromInputKW(vehicle, chargerType, endInputPower),
+      wallPowerKW: endInputPower,
     });
   }
 
