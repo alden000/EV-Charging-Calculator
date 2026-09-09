@@ -1,8 +1,13 @@
-import { curveFromShape, veh } from "./helpers";
+import { stepCurve, vehMeasured } from "./helpers";
 import type { EvVehicle } from "../types";
 
+// Tesla — Model 3 RWD/Model Y RWD use LFP packs (shallow taper, holds >100kW to ~65% SOC per
+// teslabs.de/InsideEVs LFP analysis); Model 3/Y AWD "Long Range"/"Performance" trims use NCM
+// packs on the same charging hardware/BMS (250kW cap), so LR and Performance share a curve.
 export const TESLA_VEHICLES: EvVehicle[] = [
-  veh({
+  // Measured (Tesla LFP charging-curve characterization, teslabs.de/InsideEVs): peak ~170-175kW
+  // brief, holds well above 100kW out to ~65% SOC (shallower slope than NCM packs), then tapers.
+  vehMeasured({
     id: "tesla-model-3-rwd-2024",
     make: "Tesla",
     model: "Model 3",
@@ -14,9 +19,18 @@ export const TESLA_VEHICLES: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(170, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 5, kw: 165 },
+      { upTo: 40, kw: 145 },
+      { upTo: 65, kw: 105 },
+      { upTo: 80, kw: 70 },
+      { upTo: 92, kw: 35 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
-  veh({
+  // Measured (2021 Fremont Model 3 LR AWD Supercharger test, InsideEVs): 250kW held ~5-24% SOC,
+  // ~120kW by 50%, ~54kW by 80%.
+  vehMeasured({
     id: "tesla-model-3-lr-2024",
     make: "Tesla",
     model: "Model 3",
@@ -28,9 +42,17 @@ export const TESLA_VEHICLES: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(250, "teslaNca"),
+    dcChargingCurve: stepCurve([
+      { upTo: 5, kw: 200 },
+      { upTo: 24, kw: 250 },
+      { upTo: 50, kw: 120 },
+      { upTo: 80, kw: 54 },
+      { upTo: 92, kw: 28 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
-  veh({
+  // Same 75kWh NCM pack/250kW charging hardware as Long Range AWD.
+  vehMeasured({
     id: "tesla-model-3-performance-2024",
     make: "Tesla",
     model: "Model 3",
@@ -42,9 +64,17 @@ export const TESLA_VEHICLES: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.5,
-    dcChargingCurve: curveFromShape(250, "teslaNca"),
+    dcChargingCurve: stepCurve([
+      { upTo: 5, kw: 200 },
+      { upTo: 24, kw: 250 },
+      { upTo: 50, kw: 120 },
+      { upTo: 80, kw: 54 },
+      { upTo: 92, kw: 28 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
-  veh({
+  // Measured (InsideEVs/teslabs.de LFP analysis): 175kW peak, holds >100kW to ~65% SOC.
+  vehMeasured({
     id: "tesla-model-y-rwd-2024",
     make: "Tesla",
     model: "Model Y",
@@ -56,9 +86,18 @@ export const TESLA_VEHICLES: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(175, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 5, kw: 170 },
+      { upTo: 40, kw: 150 },
+      { upTo: 65, kw: 108 },
+      { upTo: 80, kw: 70 },
+      { upTo: 92, kw: 35 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
-  veh({
+  // Measured (2024 Model Y Long Range AWD Supercharger test, TMC): under 150kW before 30% SOC,
+  // under 120kW by 40% — a more conservative curve than the older Model 3 LR AWD test.
+  vehMeasured({
     id: "tesla-model-y-lr-2024",
     make: "Tesla",
     model: "Model Y",
@@ -70,9 +109,18 @@ export const TESLA_VEHICLES: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.5,
-    dcChargingCurve: curveFromShape(250, "teslaNca"),
+    dcChargingCurve: stepCurve([
+      { upTo: 10, kw: 220 },
+      { upTo: 30, kw: 145 },
+      { upTo: 40, kw: 118 },
+      { upTo: 60, kw: 90 },
+      { upTo: 80, kw: 60 },
+      { upTo: 92, kw: 32 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
-  veh({
+  // Same 75kWh NCM pack/250kW charging hardware as Long Range AWD.
+  vehMeasured({
     id: "tesla-model-y-performance-2024",
     make: "Tesla",
     model: "Model Y",
@@ -84,6 +132,14 @@ export const TESLA_VEHICLES: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.55,
-    dcChargingCurve: curveFromShape(250, "teslaNca"),
+    dcChargingCurve: stepCurve([
+      { upTo: 10, kw: 220 },
+      { upTo: 30, kw: 145 },
+      { upTo: 40, kw: 118 },
+      { upTo: 60, kw: 90 },
+      { upTo: 80, kw: 60 },
+      { upTo: 92, kw: 32 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
 ];

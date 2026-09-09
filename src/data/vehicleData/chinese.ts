@@ -155,7 +155,10 @@ const BYD: EvVehicle[] = [
       { upTo: 100, kw: 15 },
     ]),
   }),
-  veh({
+  // Measured (ev-database.org Seal U Design 87kWh/140kW trim): 140kW peak, 84.8kW average
+  // 10-80% SOC, 43:05 10-80% charge time — a fairly gradual taper for a Blade LFP pack (not a
+  // long flat plateau). Scaled to this Comfort trim's lower 110kW (vs 140kW) cap.
+  vehMeasured({
     id: "byd-sealu-2024",
     make: "BYD",
     model: "Seal U",
@@ -167,7 +170,14 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(110, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 20, kw: 110 },
+      { upTo: 40, kw: 83 },
+      { upTo: 60, kw: 59 },
+      { upTo: 80, kw: 39 },
+      { upTo: 95, kw: 20 },
+      { upTo: 100, kw: 9 },
+    ]),
   }),
   // Shares the same 150kW DC hardware/BMS as Premium RWD and Performance AWD.
   vehMeasured({
@@ -255,6 +265,11 @@ const BYD: EvVehicle[] = [
     idleOverheadKW: 0.45,
     dcChargingCurve: curveFromShape(180, "flat800v"),
   }),
+  // Real-world tests (Proefritten/InsideEVs) found a notably slow initial ramp (5-10kW right
+  // after plugging in) before settling into a ~88-115kW plateau — not the fast early peak
+  // "teslaLfp" assumes — so this uses "gradualTaper" instead. Time-based test readings only
+  // (no clean SOC breakpoints), so this stays a shape approximation rather than a measured
+  // stepCurve.
   veh({
     id: "byd-tang-awd-2024",
     make: "BYD",
@@ -267,7 +282,7 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.55,
-    dcChargingCurve: curveFromShape(110, "teslaLfp"),
+    dcChargingCurve: curveFromShape(110, "gradualTaper"),
   }),
   veh({
     id: "byd-han-rwd-2024",
@@ -342,8 +357,10 @@ const BYD: EvVehicle[] = [
 ];
 
 // MG (SAIC)
+// Measured (evparts4x4/mgevs.com DC tests, Trophy Long Range): peak hit almost immediately
+// after plugging in, holds >100kW to ~55% SOC, then tapers. Standard/XPower scaled by cap.
 const MG: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "mg4-standard-2024",
     make: "MG",
     model: "MG4 Electric",
@@ -355,9 +372,15 @@ const MG: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(84, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 55, kw: 84 },
+      { upTo: 70, kw: 61 },
+      { upTo: 85, kw: 36 },
+      { upTo: 95, kw: 18 },
+      { upTo: 100, kw: 9 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "mg4-longrange-2024",
     make: "MG",
     model: "MG4 Electric",
@@ -369,9 +392,15 @@ const MG: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(117, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 55, kw: 117 },
+      { upTo: 70, kw: 85 },
+      { upTo: 85, kw: 50 },
+      { upTo: 95, kw: 25 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "mg4-xpower-2024",
     make: "MG",
     model: "MG4 Electric",
@@ -383,9 +412,17 @@ const MG: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(144, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 55, kw: 144 },
+      { upTo: 70, kw: 105 },
+      { upTo: 85, kw: 62 },
+      { upTo: 95, kw: 31 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
-  veh({
+  // MG5 shares the older eMP platform/92kW DC cap with the ZS EV Long Range rather than MG4's
+  // platform, so it reuses the ZS EV LR measured curve (no direct MG5 test data found).
+  vehMeasured({
     id: "mg5-2023",
     make: "MG",
     model: "MG5 Electric",
@@ -397,9 +434,18 @@ const MG: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.92,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(92, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 73 },
+      { upTo: 60, kw: 92 },
+      { upTo: 80, kw: 48 },
+      { upTo: 92, kw: 22 },
+      { upTo: 100, kw: 10 },
+    ]),
   }),
-  veh({
+  // Measured (InsideEVs/mgevs.com DC test, SR trim — peak matches its 76kW cap exactly): 76kW
+  // peak at 59-60% SOC, 70kW+ held 7-60%, ~40kW 60-80%, drops below 20kW past 80%. LR scaled by
+  // its higher 92kW cap.
+  vehMeasured({
     id: "mg-zs-ev-sr-2023",
     make: "MG",
     model: "ZS EV",
@@ -411,9 +457,15 @@ const MG: EvVehicle[] = [
     acEfficiency: 0.87,
     dcEfficiency: 0.92,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(76, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 60 },
+      { upTo: 60, kw: 76 },
+      { upTo: 80, kw: 40 },
+      { upTo: 92, kw: 18 },
+      { upTo: 100, kw: 8 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "mg-zs-ev-lr-2023",
     make: "MG",
     model: "ZS EV",
@@ -425,13 +477,21 @@ const MG: EvVehicle[] = [
     acEfficiency: 0.87,
     dcEfficiency: 0.92,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(92, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 73 },
+      { upTo: 60, kw: 92 },
+      { upTo: 80, kw: 48 },
+      { upTo: 92, kw: 22 },
+      { upTo: 100, kw: 10 },
+    ]),
   }),
 ];
 
-// GWM Ora
+// GWM Ora (Good Cat / Funky Cat / Ora 03)
+// Measured (EVKX.net/ev.care DC tests): documented "optimum charging area" of ~7-54% SOC near
+// peak (34:15 held there), then a moderate taper. LR scaled to its 80kW cap; SR to 64kW.
 const GWM: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "ora-goodcat-sr-2023",
     make: "GWM",
     model: "Ora Good Cat",
@@ -443,9 +503,15 @@ const GWM: EvVehicle[] = [
     acEfficiency: 0.87,
     dcEfficiency: 0.91,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(64, "slowLegacy"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 44 },
+      { upTo: 54, kw: 64 },
+      { upTo: 75, kw: 36 },
+      { upTo: 90, kw: 18 },
+      { upTo: 100, kw: 8 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "ora-goodcat-lr-2023",
     make: "GWM",
     model: "Ora Good Cat",
@@ -457,13 +523,22 @@ const GWM: EvVehicle[] = [
     acEfficiency: 0.87,
     dcEfficiency: 0.91,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(80, "slowLegacy"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 55 },
+      { upTo: 54, kw: 80 },
+      { upTo: 75, kw: 45 },
+      { upTo: 90, kw: 22 },
+      { upTo: 100, kw: 10 },
+    ]),
   }),
 ];
 
 // XPeng — 800V SiC architecture on G6/G9, flatter/faster curve.
+// Measured (real-world 800V DC test, LR AWD — 279kW observed vs 280kW spec): unusually, peak
+// power actually occurs mid-charge (~279kW at 45% SOC) rather than at the start — stays above
+// 230kW for several minutes, 218kW at 75%, 185kW at 80%. SR RWD scaled by its 215kW cap.
 const XPENG: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "xpeng-g6-sr-2024",
     make: "XPeng",
     model: "G6",
@@ -475,9 +550,16 @@ const XPENG: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(215, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 30, kw: 177 },
+      { upTo: 45, kw: 214 },
+      { upTo: 75, kw: 167 },
+      { upTo: 80, kw: 142 },
+      { upTo: 92, kw: 69 },
+      { upTo: 100, kw: 27 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "xpeng-g6-lr-2024",
     make: "XPeng",
     model: "G6",
@@ -489,7 +571,14 @@ const XPENG: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.5,
-    dcChargingCurve: curveFromShape(280, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 30, kw: 230 },
+      { upTo: 45, kw: 279 },
+      { upTo: 75, kw: 218 },
+      { upTo: 80, kw: 185 },
+      { upTo: 92, kw: 90 },
+      { upTo: 100, kw: 35 },
+    ]),
   }),
   veh({
     id: "xpeng-p7-rwd-2023",
@@ -523,7 +612,9 @@ const XPENG: EvVehicle[] = [
 
 // Zeekr
 const ZEEKR: EvVehicle[] = [
-  veh({
+  // Measured (EVKX.net/evcourse.com, matches this 200kW-cap trim): peak 200kW at low SOC,
+  // tapers past 60-70%, 10-80% in ~28 min.
+  vehMeasured({
     id: "zeekr-001-lr-2024",
     make: "Zeekr",
     model: "001",
@@ -535,7 +626,13 @@ const ZEEKR: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.5,
-    dcChargingCurve: curveFromShape(200, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 20, kw: 200 },
+      { upTo: 50, kw: 165 },
+      { upTo: 70, kw: 120 },
+      { upTo: 85, kw: 65 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
   veh({
     id: "zeekr-x-2024",
@@ -572,8 +669,10 @@ const WULING: EvVehicle[] = [
 ];
 
 // Nio
+// Measured (electrive.com/evcourse.com DC tests): real peak observed ~123kW (vs 140kW spec),
+// tapers past 60-70% SOC, 10-80% in ~38 min.
 const NIO: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "nio-et5-2024",
     make: "Nio",
     model: "ET5",
@@ -585,7 +684,14 @@ const NIO: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(140, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 15, kw: 95 },
+      { upTo: 40, kw: 110 },
+      { upTo: 65, kw: 80 },
+      { upTo: 80, kw: 45 },
+      { upTo: 92, kw: 22 },
+      { upTo: 100, kw: 10 },
+    ]),
   }),
 ];
 

@@ -1,4 +1,4 @@
-import { curveFromShape, stepCurve, veh, vehMeasured } from "./helpers";
+import { stepCurve, vehMeasured } from "./helpers";
 import type { EvVehicle } from "../types";
 
 // Hyundai — E-GMP 800V platform (Ioniq 5/6) charges very fast; Kona Electric is conventional 400V.
@@ -93,7 +93,10 @@ const HYUNDAI: EvVehicle[] = [
       { upTo: 100, kw: 26 },
     ]),
   }),
-  veh({
+  // Measured (real-world road tests, Recharged/notebookcheck): LR trim rarely hits its full
+  // rated peak (real peak ~90kW vs 100-102kW claimed), averaging ~70kW from low-teens to 80%
+  // SOC. SR trim scaled from LR by its lower 74kW (vs 102kW) cap.
+  vehMeasured({
     id: "hyundai-kona-ev-sr-2024",
     make: "Hyundai",
     model: "Kona Electric",
@@ -105,9 +108,16 @@ const HYUNDAI: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(74, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 15, kw: 65 },
+      { upTo: 40, kw: 59 },
+      { upTo: 60, kw: 49 },
+      { upTo: 80, kw: 35 },
+      { upTo: 92, kw: 17 },
+      { upTo: 100, kw: 8 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "hyundai-kona-ev-lr-2024",
     make: "Hyundai",
     model: "Kona Electric",
@@ -119,7 +129,14 @@ const HYUNDAI: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(102, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 15, kw: 90 },
+      { upTo: 40, kw: 82 },
+      { upTo: 60, kw: 68 },
+      { upTo: 80, kw: 48 },
+      { upTo: 92, kw: 24 },
+      { upTo: 100, kw: 11 },
+    ]),
   }),
 ];
 
@@ -190,7 +207,9 @@ const KIA: EvVehicle[] = [
       { upTo: 100, kw: 27 },
     ]),
   }),
-  veh({
+  // Measured (Kia EV forum/vrdigitalworld DC tests): ~84kW held 7-28% SOC, near-peak (~70kW) to
+  // ~56%, then a documented plateau around 44kW held out to ~81% SOC before the final taper.
+  vehMeasured({
     id: "kia-niro-ev-2023",
     make: "Kia",
     model: "Niro EV",
@@ -202,9 +221,17 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(85, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 28, kw: 84 },
+      { upTo: 56, kw: 70 },
+      { upTo: 81, kw: 44 },
+      { upTo: 92, kw: 20 },
+      { upTo: 100, kw: 9 },
+    ]),
   }),
-  veh({
+  // Measured (InsideEVs/evchargingstations DC fast-charging analysis, preconditioned): peak
+  // ~210-215kW around 23-30% SOC, spends a wide band above 180kW, notable slowdown past 70%.
+  vehMeasured({
     id: "kia-ev9-2024",
     make: "Kia",
     model: "EV9",
@@ -216,9 +243,18 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.6,
-    dcChargingCurve: curveFromShape(210, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 10, kw: 190 },
+      { upTo: 30, kw: 210 },
+      { upTo: 50, kw: 190 },
+      { upTo: 70, kw: 145 },
+      { upTo: 85, kw: 78 },
+      { upTo: 100, kw: 28 },
+    ]),
   }),
-  veh({
+  // Measured (ArenaEV/Zunder/InsideEVs road-trip tests, Long Range trim): notably flat curve,
+  // holding ~126-130kW out to ~65% SOC before tapering. Standard Range scaled by its 102kW cap.
+  vehMeasured({
     id: "kia-ev3-sr-2025",
     make: "Kia",
     model: "EV3",
@@ -230,9 +266,14 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(102, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 65, kw: 100 },
+      { upTo: 80, kw: 72 },
+      { upTo: 92, kw: 36 },
+      { upTo: 100, kw: 14 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "kia-ev3-lr-2025",
     make: "Kia",
     model: "EV3",
@@ -244,7 +285,12 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(128, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 65, kw: 126 },
+      { upTo: 80, kw: 90 },
+      { upTo: 92, kw: 45 },
+      { upTo: 100, kw: 18 },
+    ]),
   }),
 ];
 

@@ -1,8 +1,10 @@
-import { curveFromShape, veh } from "./helpers";
+import { curveFromShape, stepCurve, veh, vehMeasured } from "./helpers";
 import type { EvVehicle } from "../types";
 
+// Measured (recharged.com/xc40forum.com tests): 150kW peak held only briefly (~7-17% SOC),
+// fastest 10-30%, slows dramatically past 50%, down near L2 AC speed by 80%.
 const VOLVO: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "volvo-xc40-recharge-sm-2024",
     make: "Volvo",
     model: "XC40 Recharge",
@@ -14,9 +16,16 @@ const VOLVO: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(150, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 110 },
+      { upTo: 17, kw: 150 },
+      { upTo: 30, kw: 130 },
+      { upTo: 50, kw: 90 },
+      { upTo: 80, kw: 35 },
+      { upTo: 100, kw: 11 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "volvo-xc40-recharge-tm-awd-2024",
     make: "Volvo",
     model: "XC40 Recharge",
@@ -28,9 +37,17 @@ const VOLVO: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(130, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 95 },
+      { upTo: 17, kw: 130 },
+      { upTo: 30, kw: 113 },
+      { upTo: 50, kw: 78 },
+      { upTo: 80, kw: 30 },
+      { upTo: 100, kw: 10 },
+    ]),
   }),
-  veh({
+  // Same platform/pack as XC40 Recharge Single Motor.
+  vehMeasured({
     id: "volvo-c40-recharge-sm-2024",
     make: "Volvo",
     model: "C40 Recharge",
@@ -42,12 +59,22 @@ const VOLVO: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(150, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 7, kw: 110 },
+      { upTo: 17, kw: 150 },
+      { upTo: 30, kw: 130 },
+      { upTo: 50, kw: 90 },
+      { upTo: 80, kw: 35 },
+      { upTo: 100, kw: 11 },
+    ]),
   }),
 ];
 
+// Measured (i4talk.com/bmwblog.com): unusually, max power (205kW) occurs near 30-40% SOC
+// rather than at the start of the session — a robust ~200kW is already available at 50% SOC,
+// then it tapers gradually rather than falling off a cliff.
 const BMW: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "bmw-i4-edrive40-2024",
     make: "BMW",
     model: "i4",
@@ -59,9 +86,17 @@ const BMW: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(205, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 10, kw: 140 },
+      { upTo: 35, kw: 205 },
+      { upTo: 50, kw: 195 },
+      { upTo: 70, kw: 130 },
+      { upTo: 85, kw: 70 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
-  veh({
+  // Same Gen5 BMW platform/205kW charging hardware as i4 eDrive40.
+  vehMeasured({
     id: "bmw-i5-edrive40-2024",
     make: "BMW",
     model: "i5",
@@ -73,7 +108,14 @@ const BMW: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(205, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 10, kw: 140 },
+      { upTo: 35, kw: 205 },
+      { upTo: 50, kw: 195 },
+      { upTo: 70, kw: 130 },
+      { upTo: 85, kw: 70 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
   veh({
     id: "bmw-ix1-edrive20-2024",
@@ -209,8 +251,10 @@ const AUDI: EvVehicle[] = [
   }),
 ];
 
+// Measured (InsideEVs DC fast-charging analysis, 93.4kWh pack shared by 4S/Turbo): 270kW peak
+// held to ~25% SOC, drops to ~200kW, then ~150kW held 35-67% SOC, 5-80% in 22.5 min.
 const PORSCHE: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "porsche-taycan-4s-2024",
     make: "Porsche",
     model: "Taycan",
@@ -222,9 +266,15 @@ const PORSCHE: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.5,
-    dcChargingCurve: curveFromShape(270, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 25, kw: 270 },
+      { upTo: 35, kw: 200 },
+      { upTo: 67, kw: 150 },
+      { upTo: 85, kw: 70 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "porsche-taycan-turbo-2024",
     make: "Porsche",
     model: "Taycan",
@@ -236,7 +286,13 @@ const PORSCHE: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.55,
-    dcChargingCurve: curveFromShape(270, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 25, kw: 270 },
+      { upTo: 35, kw: 200 },
+      { upTo: 67, kw: 150 },
+      { upTo: 85, kw: 70 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
   veh({
     id: "porsche-macan-electric-2024",
@@ -255,7 +311,9 @@ const PORSCHE: EvVehicle[] = [
 ];
 
 const POLESTAR: EvVehicle[] = [
-  veh({
+  // Measured (InsideEVs DC fast-charging tests): peak power held only briefly, up to ~17% SOC,
+  // then a steady taper through the mid-range — scaled here to this trim's listed 205kW cap.
+  vehMeasured({
     id: "polestar-2-lr-dm-2024",
     make: "Polestar",
     model: "2",
@@ -267,7 +325,14 @@ const POLESTAR: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(205, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 17, kw: 200 },
+      { upTo: 40, kw: 150 },
+      { upTo: 65, kw: 100 },
+      { upTo: 80, kw: 55 },
+      { upTo: 92, kw: 28 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
   veh({
     id: "polestar-3-2024",
@@ -378,8 +443,11 @@ const PEUGEOT: EvVehicle[] = [
   }),
 ];
 
+// Measured (InsideEVs DC fast-charging analysis, Kyle Conner/Tom Moloughney tests cross-checked
+// with Fastned data): ~128kW held to ~30% SOC (11 min), fades to ~69kW by 80%, ~41kW by 90%.
+// Pro RWD and GTX AWD share the same 77kWh pack/135kW charging hardware.
 const VOLKSWAGEN: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "vw-id4-pro-2024",
     make: "Volkswagen",
     model: "ID.4",
@@ -391,9 +459,15 @@ const VOLKSWAGEN: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(135, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 30, kw: 128 },
+      { upTo: 70, kw: 80 },
+      { upTo: 80, kw: 69 },
+      { upTo: 90, kw: 41 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "vw-id4-gtx-2024",
     make: "Volkswagen",
     model: "ID.4",
@@ -405,7 +479,13 @@ const VOLKSWAGEN: EvVehicle[] = [
     acEfficiency: 0.88,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(135, "gradualTaper"),
+    dcChargingCurve: stepCurve([
+      { upTo: 30, kw: 128 },
+      { upTo: 70, kw: 80 },
+      { upTo: 80, kw: 69 },
+      { upTo: 90, kw: 41 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
 ];
 
