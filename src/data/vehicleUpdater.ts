@@ -15,7 +15,7 @@ import type { EvVehicle, VehicleDatabase } from "./types";
  * source instead (e.g. a community EV-specs API, or a small backend that
  * runs the AI-assisted refresh workflow server-side).
  */
-const REMOTE_DB_URL = import.meta.env.VITE_VEHICLE_DB_URL ?? "/vehicle-db.json";
+const REMOTE_DB_URL = import.meta.env.VITE_VEHICLE_DB_URL ?? `${import.meta.env.BASE_URL}vehicle-db.json`;
 
 const CACHE_KEY = "ev-charge-estimator:vehicle-db-cache:v1";
 const CACHE_CHECKED_KEY = "ev-charge-estimator:vehicle-db-checked-at:v1";

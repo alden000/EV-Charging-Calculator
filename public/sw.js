@@ -1,5 +1,8 @@
-const CACHE_NAME = "ev-charge-estimator-v1";
-const APP_SHELL = ["/", "/manifest.webmanifest", "/favicon.svg"];
+const CACHE_NAME = "ev-charge-estimator-v2";
+// Relative so they resolve correctly whether the app is served from the
+// origin root (Vercel/Netlify) or a subpath (GitHub Pages project sites) —
+// relative URLs in a service worker resolve against its own script URL.
+const APP_SHELL = ["./", "./manifest.webmanifest", "./favicon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -27,6 +30,6 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
         return response;
       })
-      .catch(() => caches.match(event.request).then((cached) => cached || caches.match("/")))
+      .catch(() => caches.match(event.request).then((cached) => cached || caches.match("./")))
   );
 });
