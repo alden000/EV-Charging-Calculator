@@ -5609,35 +5609,35 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 60
-        },
-        {
-          "soc": 10,
-          "kw": 127.5
-        },
-        {
-          "soc": 20,
           "kw": 150
         },
         {
-          "soc": 30,
+          "soc": 7,
           "kw": 150
+        },
+        {
+          "soc": 7,
+          "kw": 109
+        },
+        {
+          "soc": 27,
+          "kw": 109
+        },
+        {
+          "soc": 27,
+          "kw": 96
         },
         {
           "soc": 40,
-          "kw": 135
+          "kw": 96
         },
         {
-          "soc": 50,
-          "kw": 112.5
+          "soc": 40,
+          "kw": 78
         },
         {
-          "soc": 60,
-          "kw": 90
-        },
-        {
-          "soc": 70,
-          "kw": 67.5
+          "soc": 80,
+          "kw": 78
         },
         {
           "soc": 80,
@@ -5645,7 +5645,11 @@
         },
         {
           "soc": 90,
-          "kw": 30
+          "kw": 45
+        },
+        {
+          "soc": 90,
+          "kw": 15
         },
         {
           "soc": 100,
@@ -5653,7 +5657,7 @@
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "chevrolet-bolt-euv-2023",
@@ -5670,51 +5674,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 27.5
+          "kw": 45
         },
         {
-          "soc": 10,
-          "kw": 49.5
+          "soc": 2,
+          "kw": 45
         },
         {
-          "soc": 20,
-          "kw": 55
+          "soc": 2,
+          "kw": 54
         },
         {
-          "soc": 30,
-          "kw": 52.3
+          "soc": 51,
+          "kw": 54
         },
         {
-          "soc": 40,
-          "kw": 41.3
+          "soc": 51,
+          "kw": 30
         },
         {
-          "soc": 50,
-          "kw": 30.3
+          "soc": 76,
+          "kw": 30
         },
         {
-          "soc": 60,
-          "kw": 22
-        },
-        {
-          "soc": 70,
-          "kw": 16.5
+          "soc": 76,
+          "kw": 23
         },
         {
           "soc": 80,
-          "kw": 11
+          "kw": 23
         },
         {
-          "soc": 90,
-          "kw": 8.3
+          "soc": 80,
+          "kw": 13
+        },
+        {
+          "soc": 98,
+          "kw": 13
+        },
+        {
+          "soc": 98,
+          "kw": 10
         },
         {
           "soc": 100,
-          "kw": 5.5
+          "kw": 10
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "cadillac-lyriq-2024",
@@ -5731,51 +5739,79 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 76
-        },
-        {
-          "soc": 10,
-          "kw": 161.5
+          "kw": 187
         },
         {
           "soc": 20,
-          "kw": 190
+          "kw": 187
         },
         {
-          "soc": 30,
-          "kw": 190
+          "soc": 20,
+          "kw": 150
         },
         {
-          "soc": 40,
-          "kw": 171
+          "soc": 35,
+          "kw": 150
         },
         {
-          "soc": 50,
-          "kw": 142.5
+          "soc": 35,
+          "kw": 95
         },
         {
-          "soc": 60,
-          "kw": 114
+          "soc": 45,
+          "kw": 95
         },
         {
-          "soc": 70,
-          "kw": 85.5
+          "soc": 45,
+          "kw": 29
+        },
+        {
+          "soc": 51,
+          "kw": 29
+        },
+        {
+          "soc": 51,
+          "kw": 97
+        },
+        {
+          "soc": 58,
+          "kw": 97
+        },
+        {
+          "soc": 58,
+          "kw": 33
+        },
+        {
+          "soc": 68,
+          "kw": 33
+        },
+        {
+          "soc": 68,
+          "kw": 42
         },
         {
           "soc": 80,
-          "kw": 57
+          "kw": 42
+        },
+        {
+          "soc": 80,
+          "kw": 22
         },
         {
           "soc": 90,
-          "kw": 38
+          "kw": 22
+        },
+        {
+          "soc": 90,
+          "kw": 10
         },
         {
           "soc": 100,
-          "kw": 19
+          "kw": 10
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "rivian-r1t-large-2024",
@@ -5792,51 +5828,63 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 88
+          "kw": 200
         },
         {
-          "soc": 10,
-          "kw": 187
+          "soc": 22,
+          "kw": 200
         },
         {
-          "soc": 20,
-          "kw": 220
+          "soc": 22,
+          "kw": 158
         },
         {
-          "soc": 30,
-          "kw": 220
+          "soc": 45,
+          "kw": 158
         },
         {
-          "soc": 40,
-          "kw": 198
+          "soc": 45,
+          "kw": 120
         },
         {
-          "soc": 50,
-          "kw": 165
+          "soc": 58,
+          "kw": 120
         },
         {
-          "soc": 60,
-          "kw": 132
+          "soc": 58,
+          "kw": 95
         },
         {
-          "soc": 70,
-          "kw": 99
+          "soc": 72,
+          "kw": 95
+        },
+        {
+          "soc": 72,
+          "kw": 50
         },
         {
           "soc": 80,
-          "kw": 66
+          "kw": 50
+        },
+        {
+          "soc": 80,
+          "kw": 25
         },
         {
           "soc": 90,
-          "kw": 44
+          "kw": 25
+        },
+        {
+          "soc": 90,
+          "kw": 10
         },
         {
           "soc": 100,
-          "kw": 22
+          "kw": 10
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     }
   ]
 }
