@@ -32,3 +32,33 @@ export function curveFromShape(peakKW: number, shape: CurveShapeName): ChargeCur
     kw: Math.round(peakKW * multipliers[i] * 10) / 10,
   }));
 }
+
+/** One plateau of a measured step curve: holds `kw` from the previous step's SOC up to `upTo`%. */
+export interface ChargeStep {
+  upTo: number;
+  kw: number;
+}
+
+/**
+ * Builds a step-taper curve (as opposed to curveFromShape's smooth
+ * interpolated shape) from real charging-test breakpoints — most EVs'
+ * actual charge controllers hold a fixed power plateau and then drop in
+ * discrete steps as SOC crosses BMS-defined thresholds, rather than
+ * tapering smoothly. Each step contributes a flat plateau followed by a
+ * vertical drop, encoded as two points sharing the same SOC (see
+ * interpolateCurve in chargingModel.ts — querying exactly at a shared SOC
+ * resolves to the earlier/higher segment, everything above it to the next).
+ *
+ * Example: stepCurve([{ upTo: 60, kw: 85 }, { upTo: 85, kw: 55 }, { upTo: 100, kw: 20 }])
+ * holds 85kW from 0-60%, drops to 55kW for 60-85%, then 20kW to 100%.
+ */
+export function stepCurve(steps: ChargeStep[]): ChargeCurvePoint[] {
+  const points: ChargeCurvePoint[] = [];
+  let previousSoc = 0;
+  for (const step of steps) {
+    points.push({ soc: previousSoc, kw: step.kw });
+    points.push({ soc: step.upTo, kw: step.kw });
+    previousSoc = step.upTo;
+  }
+  return points;
+}

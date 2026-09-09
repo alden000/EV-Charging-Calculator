@@ -17,51 +17,47 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 40
-        },
-        {
-          "soc": 10,
-          "kw": 76
-        },
-        {
-          "soc": 20,
-          "kw": 80
-        },
-        {
-          "soc": 30,
-          "kw": 80
-        },
-        {
-          "soc": 40,
-          "kw": 76
-        },
-        {
-          "soc": 50,
-          "kw": 68
+          "kw": 77
         },
         {
           "soc": 60,
-          "kw": 60
+          "kw": 77
         },
         {
-          "soc": 70,
-          "kw": 48
+          "soc": 60,
+          "kw": 49
         },
         {
-          "soc": 80,
-          "kw": 36
+          "soc": 64,
+          "kw": 49
         },
         {
-          "soc": 90,
-          "kw": 24
+          "soc": 64,
+          "kw": 52
+        },
+        {
+          "soc": 85,
+          "kw": 52
+        },
+        {
+          "soc": 85,
+          "kw": 23
+        },
+        {
+          "soc": 95,
+          "kw": 23
+        },
+        {
+          "soc": 95,
+          "kw": 11
         },
         {
           "soc": 100,
-          "kw": 12
+          "kw": 11
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-atto3-er-2024",
@@ -78,51 +74,47 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 44
-        },
-        {
-          "soc": 10,
-          "kw": 83.6
-        },
-        {
-          "soc": 20,
-          "kw": 88
-        },
-        {
-          "soc": 30,
-          "kw": 88
-        },
-        {
-          "soc": 40,
-          "kw": 83.6
-        },
-        {
-          "soc": 50,
-          "kw": 74.8
+          "kw": 85
         },
         {
           "soc": 60,
-          "kw": 66
+          "kw": 85
         },
         {
-          "soc": 70,
-          "kw": 52.8
+          "soc": 60,
+          "kw": 54
         },
         {
-          "soc": 80,
-          "kw": 39.6
+          "soc": 64,
+          "kw": 54
         },
         {
-          "soc": 90,
-          "kw": 26.4
+          "soc": 64,
+          "kw": 57
+        },
+        {
+          "soc": 85,
+          "kw": 57
+        },
+        {
+          "soc": 85,
+          "kw": 25
+        },
+        {
+          "soc": 95,
+          "kw": 25
+        },
+        {
+          "soc": 95,
+          "kw": 12
         },
         {
           "soc": 100,
-          "kw": 13.2
+          "kw": 12
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-dolphin-sr-2024",
@@ -139,51 +131,47 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 32.5
-        },
-        {
-          "soc": 10,
-          "kw": 61.8
-        },
-        {
-          "soc": 20,
-          "kw": 65
-        },
-        {
-          "soc": 30,
-          "kw": 65
-        },
-        {
-          "soc": 40,
-          "kw": 61.8
-        },
-        {
-          "soc": 50,
-          "kw": 55.3
+          "kw": 63
         },
         {
           "soc": 60,
-          "kw": 48.8
+          "kw": 63
         },
         {
-          "soc": 70,
-          "kw": 39
+          "soc": 60,
+          "kw": 40
         },
         {
-          "soc": 80,
-          "kw": 29.3
+          "soc": 64,
+          "kw": 40
         },
         {
-          "soc": 90,
-          "kw": 19.5
+          "soc": 64,
+          "kw": 42
+        },
+        {
+          "soc": 85,
+          "kw": 42
+        },
+        {
+          "soc": 85,
+          "kw": 18
+        },
+        {
+          "soc": 95,
+          "kw": 18
+        },
+        {
+          "soc": 95,
+          "kw": 9
         },
         {
           "soc": 100,
-          "kw": 9.8
+          "kw": 9
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-dolphin-lr-2024",
@@ -200,51 +188,47 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 44
-        },
-        {
-          "soc": 10,
-          "kw": 83.6
-        },
-        {
-          "soc": 20,
-          "kw": 88
-        },
-        {
-          "soc": 30,
-          "kw": 88
-        },
-        {
-          "soc": 40,
-          "kw": 83.6
-        },
-        {
-          "soc": 50,
-          "kw": 74.8
+          "kw": 85
         },
         {
           "soc": 60,
-          "kw": 66
+          "kw": 85
         },
         {
-          "soc": 70,
-          "kw": 52.8
+          "soc": 60,
+          "kw": 54
         },
         {
-          "soc": 80,
-          "kw": 39.6
+          "soc": 64,
+          "kw": 54
         },
         {
-          "soc": 90,
-          "kw": 26.4
+          "soc": 64,
+          "kw": 57
+        },
+        {
+          "soc": 85,
+          "kw": 57
+        },
+        {
+          "soc": 85,
+          "kw": 25
+        },
+        {
+          "soc": 95,
+          "kw": 25
+        },
+        {
+          "soc": 95,
+          "kw": 12
         },
         {
           "soc": 100,
-          "kw": 13.2
+          "kw": 12
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-seal-dynamic-rwd-2024",
@@ -261,51 +245,104 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 55
-        },
-        {
-          "soc": 10,
-          "kw": 104.5
-        },
-        {
-          "soc": 20,
           "kw": 110
         },
         {
-          "soc": 30,
+          "soc": 55,
           "kw": 110
         },
         {
-          "soc": 40,
-          "kw": 104.5
-        },
-        {
-          "soc": 50,
-          "kw": 93.5
+          "soc": 55,
+          "kw": 88
         },
         {
           "soc": 60,
-          "kw": 82.5
+          "kw": 88
         },
         {
-          "soc": 70,
-          "kw": 66
+          "soc": 60,
+          "kw": 51
         },
         {
           "soc": 80,
-          "kw": 49.5
+          "kw": 51
+        },
+        {
+          "soc": 80,
+          "kw": 26
         },
         {
           "soc": 90,
-          "kw": 33
+          "kw": 26
+        },
+        {
+          "soc": 90,
+          "kw": 11
         },
         {
           "soc": 100,
-          "kw": 16.5
+          "kw": 11
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
+    },
+    {
+      "id": "byd-seal-premium-rwd-2024",
+      "make": "BYD",
+      "model": "Seal",
+      "trim": "Premium RWD",
+      "year": 2024,
+      "batteryCapacityKWh": 82.5,
+      "acMaxPowerKW": 11,
+      "dcMaxPowerKW": 150,
+      "acEfficiency": 0.9,
+      "dcEfficiency": 0.94,
+      "idleOverheadKW": 0.45,
+      "dcChargingCurve": [
+        {
+          "soc": 0,
+          "kw": 150
+        },
+        {
+          "soc": 55,
+          "kw": 150
+        },
+        {
+          "soc": 55,
+          "kw": 120
+        },
+        {
+          "soc": 60,
+          "kw": 120
+        },
+        {
+          "soc": 60,
+          "kw": 70
+        },
+        {
+          "soc": 80,
+          "kw": 70
+        },
+        {
+          "soc": 80,
+          "kw": 35
+        },
+        {
+          "soc": 90,
+          "kw": 35
+        },
+        {
+          "soc": 90,
+          "kw": 15
+        },
+        {
+          "soc": 100,
+          "kw": 15
+        }
+      ],
+      "lastUpdated": "2026-09-09",
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-seal-performance-awd-2024",
@@ -318,55 +355,51 @@
       "dcMaxPowerKW": 150,
       "acEfficiency": 0.9,
       "dcEfficiency": 0.94,
-      "idleOverheadKW": 0.45,
+      "idleOverheadKW": 0.5,
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 75
-        },
-        {
-          "soc": 10,
-          "kw": 142.5
-        },
-        {
-          "soc": 20,
           "kw": 150
         },
         {
-          "soc": 30,
+          "soc": 55,
           "kw": 150
         },
         {
-          "soc": 40,
-          "kw": 142.5
-        },
-        {
-          "soc": 50,
-          "kw": 127.5
+          "soc": 55,
+          "kw": 120
         },
         {
           "soc": 60,
-          "kw": 112.5
+          "kw": 120
         },
         {
-          "soc": 70,
-          "kw": 90
+          "soc": 60,
+          "kw": 70
         },
         {
           "soc": 80,
-          "kw": 67.5
+          "kw": 70
+        },
+        {
+          "soc": 80,
+          "kw": 35
         },
         {
           "soc": 90,
-          "kw": 45
+          "kw": 35
+        },
+        {
+          "soc": 90,
+          "kw": 15
         },
         {
           "soc": 100,
-          "kw": 22.5
+          "kw": 15
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-sealu-2024",
@@ -444,51 +477,39 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 82.5
-        },
-        {
-          "soc": 10,
-          "kw": 142.5
-        },
-        {
-          "soc": 20,
           "kw": 150
         },
         {
-          "soc": 30,
+          "soc": 65,
           "kw": 150
         },
         {
-          "soc": 40,
-          "kw": 150
+          "soc": 65,
+          "kw": 80
         },
         {
-          "soc": 50,
-          "kw": 142.5
+          "soc": 85,
+          "kw": 80
         },
         {
-          "soc": 60,
-          "kw": 127.5
+          "soc": 85,
+          "kw": 45
         },
         {
-          "soc": 70,
-          "kw": 105
+          "soc": 99,
+          "kw": 45
         },
         {
-          "soc": 80,
-          "kw": 75
-        },
-        {
-          "soc": 90,
-          "kw": 52.5
+          "soc": 99,
+          "kw": 22.5
         },
         {
           "soc": 100,
-          "kw": 30
+          "kw": 22.5
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-sealion7-premium-2025",
@@ -554,51 +575,39 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 82.5
-        },
-        {
-          "soc": 10,
-          "kw": 142.5
-        },
-        {
-          "soc": 20,
           "kw": 150
         },
         {
-          "soc": 30,
+          "soc": 65,
           "kw": 150
         },
         {
-          "soc": 40,
-          "kw": 150
+          "soc": 65,
+          "kw": 80
         },
         {
-          "soc": 50,
-          "kw": 142.5
+          "soc": 85,
+          "kw": 80
         },
         {
-          "soc": 60,
-          "kw": 127.5
+          "soc": 85,
+          "kw": 45
         },
         {
-          "soc": 70,
-          "kw": 105
+          "soc": 99,
+          "kw": 45
         },
         {
-          "soc": 80,
-          "kw": 75
-        },
-        {
-          "soc": 90,
-          "kw": 52.5
+          "soc": 99,
+          "kw": 22.5
         },
         {
           "soc": 100,
-          "kw": 30
+          "kw": 22.5
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-songplus-2024",
@@ -2079,51 +2088,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 96.3
+          "kw": 145
         },
         {
-          "soc": 10,
-          "kw": 166.3
+          "soc": 24,
+          "kw": 145
         },
         {
-          "soc": 20,
-          "kw": 175
+          "soc": 24,
+          "kw": 173
         },
         {
-          "soc": 30,
-          "kw": 175
+          "soc": 51,
+          "kw": 173
         },
         {
-          "soc": 40,
-          "kw": 175
+          "soc": 51,
+          "kw": 134
         },
         {
-          "soc": 50,
-          "kw": 166.3
+          "soc": 65,
+          "kw": 134
         },
         {
-          "soc": 60,
-          "kw": 148.8
-        },
-        {
-          "soc": 70,
-          "kw": 122.5
+          "soc": 65,
+          "kw": 97
         },
         {
           "soc": 80,
-          "kw": 87.5
+          "kw": 97
         },
         {
-          "soc": 90,
-          "kw": 61.2
+          "soc": 80,
+          "kw": 37
+        },
+        {
+          "soc": 99,
+          "kw": 37
+        },
+        {
+          "soc": 99,
+          "kw": 19
         },
         {
           "soc": 100,
-          "kw": 35
+          "kw": 19
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "hyundai-ioniq5-2024",
@@ -2140,51 +2153,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 129.3
+          "kw": 195
         },
         {
-          "soc": 10,
-          "kw": 223.3
+          "soc": 24,
+          "kw": 195
         },
         {
-          "soc": 20,
-          "kw": 235
+          "soc": 24,
+          "kw": 232
         },
         {
-          "soc": 30,
-          "kw": 235
+          "soc": 51,
+          "kw": 232
         },
         {
-          "soc": 40,
-          "kw": 235
+          "soc": 51,
+          "kw": 180
         },
         {
-          "soc": 50,
-          "kw": 223.3
+          "soc": 65,
+          "kw": 180
         },
         {
-          "soc": 60,
-          "kw": 199.8
-        },
-        {
-          "soc": 70,
-          "kw": 164.5
+          "soc": 65,
+          "kw": 130
         },
         {
           "soc": 80,
-          "kw": 117.5
+          "kw": 130
         },
         {
-          "soc": 90,
-          "kw": 82.3
+          "soc": 80,
+          "kw": 50
+        },
+        {
+          "soc": 99,
+          "kw": 50
+        },
+        {
+          "soc": 99,
+          "kw": 25
         },
         {
           "soc": 100,
-          "kw": 47
+          "kw": 25
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "hyundai-ioniq6-sr-2024",
@@ -2201,51 +2218,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 61.1
+          "kw": 92
         },
         {
-          "soc": 10,
-          "kw": 105.5
+          "soc": 24,
+          "kw": 92
         },
         {
-          "soc": 20,
-          "kw": 111
+          "soc": 24,
+          "kw": 110
         },
         {
-          "soc": 30,
-          "kw": 111
+          "soc": 51,
+          "kw": 110
         },
         {
-          "soc": 40,
-          "kw": 111
+          "soc": 51,
+          "kw": 85
         },
         {
-          "soc": 50,
-          "kw": 105.5
+          "soc": 65,
+          "kw": 85
         },
         {
-          "soc": 60,
-          "kw": 94.4
-        },
-        {
-          "soc": 70,
-          "kw": 77.7
+          "soc": 65,
+          "kw": 61
         },
         {
           "soc": 80,
-          "kw": 55.5
+          "kw": 61
         },
         {
-          "soc": 90,
-          "kw": 38.8
+          "soc": 80,
+          "kw": 24
+        },
+        {
+          "soc": 99,
+          "kw": 24
+        },
+        {
+          "soc": 99,
+          "kw": 12
         },
         {
           "soc": 100,
-          "kw": 22.2
+          "kw": 12
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "hyundai-ioniq6-2024",
@@ -2262,51 +2283,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 132
+          "kw": 199
         },
         {
-          "soc": 10,
-          "kw": 228
+          "soc": 24,
+          "kw": 199
         },
         {
-          "soc": 20,
-          "kw": 240
+          "soc": 24,
+          "kw": 237
         },
         {
-          "soc": 30,
-          "kw": 240
+          "soc": 51,
+          "kw": 237
         },
         {
-          "soc": 40,
-          "kw": 240
+          "soc": 51,
+          "kw": 184
         },
         {
-          "soc": 50,
-          "kw": 228
+          "soc": 65,
+          "kw": 184
         },
         {
-          "soc": 60,
-          "kw": 204
-        },
-        {
-          "soc": 70,
-          "kw": 168
+          "soc": 65,
+          "kw": 133
         },
         {
           "soc": 80,
-          "kw": 120
+          "kw": 133
         },
         {
-          "soc": 90,
-          "kw": 84
+          "soc": 80,
+          "kw": 51
+        },
+        {
+          "soc": 99,
+          "kw": 51
+        },
+        {
+          "soc": 99,
+          "kw": 26
         },
         {
           "soc": 100,
-          "kw": 48
+          "kw": 26
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "hyundai-kona-ev-sr-2024",
@@ -2445,51 +2470,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 96.3
+          "kw": 145
         },
         {
-          "soc": 10,
-          "kw": 166.3
+          "soc": 24,
+          "kw": 145
         },
         {
-          "soc": 20,
-          "kw": 175
+          "soc": 24,
+          "kw": 173
         },
         {
-          "soc": 30,
-          "kw": 175
+          "soc": 51,
+          "kw": 173
         },
         {
-          "soc": 40,
-          "kw": 175
+          "soc": 51,
+          "kw": 134
         },
         {
-          "soc": 50,
-          "kw": 166.3
+          "soc": 65,
+          "kw": 134
         },
         {
-          "soc": 60,
-          "kw": 148.8
-        },
-        {
-          "soc": 70,
-          "kw": 122.5
+          "soc": 65,
+          "kw": 97
         },
         {
           "soc": 80,
-          "kw": 87.5
+          "kw": 97
         },
         {
-          "soc": 90,
-          "kw": 61.2
+          "soc": 80,
+          "kw": 37
+        },
+        {
+          "soc": 99,
+          "kw": 37
+        },
+        {
+          "soc": 99,
+          "kw": 19
         },
         {
           "soc": 100,
-          "kw": 35
+          "kw": 19
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "kia-ev6-2024",
@@ -2506,51 +2535,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 129.3
+          "kw": 195
         },
         {
-          "soc": 10,
-          "kw": 223.3
+          "soc": 24,
+          "kw": 195
         },
         {
-          "soc": 20,
-          "kw": 235
+          "soc": 24,
+          "kw": 232
         },
         {
-          "soc": 30,
-          "kw": 235
+          "soc": 51,
+          "kw": 232
         },
         {
-          "soc": 40,
-          "kw": 235
+          "soc": 51,
+          "kw": 180
         },
         {
-          "soc": 50,
-          "kw": 223.3
+          "soc": 65,
+          "kw": 180
         },
         {
-          "soc": 60,
-          "kw": 199.8
-        },
-        {
-          "soc": 70,
-          "kw": 164.5
+          "soc": 65,
+          "kw": 130
         },
         {
           "soc": 80,
-          "kw": 117.5
+          "kw": 130
         },
         {
-          "soc": 90,
-          "kw": 82.3
+          "soc": 80,
+          "kw": 50
+        },
+        {
+          "soc": 99,
+          "kw": 50
+        },
+        {
+          "soc": 99,
+          "kw": 25
         },
         {
           "soc": 100,
-          "kw": 47
+          "kw": 25
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "kia-ev6-gt-2024",
@@ -2567,51 +2600,55 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 141.9
+          "kw": 214
         },
         {
-          "soc": 10,
-          "kw": 245.1
+          "soc": 24,
+          "kw": 214
         },
         {
-          "soc": 20,
-          "kw": 258
+          "soc": 24,
+          "kw": 255
         },
         {
-          "soc": 30,
-          "kw": 258
+          "soc": 51,
+          "kw": 255
         },
         {
-          "soc": 40,
-          "kw": 258
+          "soc": 51,
+          "kw": 198
         },
         {
-          "soc": 50,
-          "kw": 245.1
+          "soc": 65,
+          "kw": 198
         },
         {
-          "soc": 60,
-          "kw": 219.3
-        },
-        {
-          "soc": 70,
-          "kw": 180.6
+          "soc": 65,
+          "kw": 143
         },
         {
           "soc": 80,
-          "kw": 129
+          "kw": 143
         },
         {
-          "soc": 90,
-          "kw": 90.3
+          "soc": 80,
+          "kw": 55
+        },
+        {
+          "soc": 99,
+          "kw": 55
+        },
+        {
+          "soc": 99,
+          "kw": 27
         },
         {
           "soc": 100,
-          "kw": 51.6
+          "kw": 27
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "kia-niro-ev-2023",

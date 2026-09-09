@@ -1,9 +1,12 @@
-import { curveFromShape, veh, LAST_UPDATED } from "./helpers";
+import { curveFromShape, stepCurve, veh, vehMeasured } from "./helpers";
 import type { EvVehicle } from "../types";
 
 // BYD — LFP "Blade" packs on most models: flat plateau, gradual taper (teslaLfp shape approximates this well).
 const BYD: EvVehicle[] = [
-  veh({
+  // Extended Range measured curve (evkx.net / zecar / planevcharge test data): flat
+  // ~85kW plateau from ~5% clear through 60%, drops to ~54kW at 64%, small recovery to
+  // ~57kW through ~85%, then tapers (tail beyond 85% not covered by sources — estimated).
+  vehMeasured({
     id: "byd-atto3-sr-2024",
     make: "BYD",
     model: "Atto 3",
@@ -15,9 +18,16 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(80, "teslaLfp"),
+    // Scaled from the Extended Range's measured curve by its lower 80kW (vs 88kW) cap.
+    dcChargingCurve: stepCurve([
+      { upTo: 60, kw: 77 },
+      { upTo: 64, kw: 49 },
+      { upTo: 85, kw: 52 },
+      { upTo: 95, kw: 23 },
+      { upTo: 100, kw: 11 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "byd-atto3-er-2024",
     make: "BYD",
     model: "Atto 3",
@@ -29,9 +39,18 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(88, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 60, kw: 85 },
+      { upTo: 64, kw: 54 },
+      { upTo: 85, kw: 57 },
+      { upTo: 95, kw: 25 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
-  veh({
+  // Same Blade LFP platform/BMS family as Atto 3 (flat plateau to ~60-70%, then tapers —
+  // zecar/soyacincau confirm the shape but not exact breakpoints for Dolphin specifically),
+  // so the Atto 3's measured curve shape is scaled to Dolphin's own DC power caps.
+  vehMeasured({
     id: "byd-dolphin-sr-2024",
     make: "BYD",
     model: "Dolphin",
@@ -43,9 +62,15 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(65, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 60, kw: 63 },
+      { upTo: 64, kw: 40 },
+      { upTo: 85, kw: 42 },
+      { upTo: 95, kw: 18 },
+      { upTo: 100, kw: 9 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "byd-dolphin-lr-2024",
     make: "BYD",
     model: "Dolphin",
@@ -57,9 +82,18 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.93,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(88, "teslaLfp"),
+    dcChargingCurve: stepCurve([
+      { upTo: 60, kw: 85 },
+      { upTo: 64, kw: 54 },
+      { upTo: 85, kw: 57 },
+      { upTo: 95, kw: 25 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
-  veh({
+  // Measured curve (soyacincau Malaysia DC fast-charge test, 150kW-capable Seal): 150kW
+  // plateau 34-55%, drops to 120kW to 60%, then 70kW to 80%; tail beyond 80% (where BYD's
+  // own guidance says rapid charging is rarely pushed past) is an estimated taper.
+  vehMeasured({
     id: "byd-seal-dynamic-rwd-2024",
     make: "BYD",
     model: "Seal",
@@ -71,9 +105,36 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(110, "teslaLfp"),
+    // Scaled from the Premium/Performance measured curve by its lower 110kW (vs 150kW) cap.
+    dcChargingCurve: stepCurve([
+      { upTo: 55, kw: 110 },
+      { upTo: 60, kw: 88 },
+      { upTo: 80, kw: 51 },
+      { upTo: 90, kw: 26 },
+      { upTo: 100, kw: 11 },
+    ]),
   }),
-  veh({
+  vehMeasured({
+    id: "byd-seal-premium-rwd-2024",
+    make: "BYD",
+    model: "Seal",
+    trim: "Premium RWD",
+    year: 2024,
+    batteryCapacityKWh: 82.5,
+    acMaxPowerKW: 11,
+    dcMaxPowerKW: 150,
+    acEfficiency: 0.9,
+    dcEfficiency: 0.94,
+    idleOverheadKW: 0.45,
+    dcChargingCurve: stepCurve([
+      { upTo: 55, kw: 150 },
+      { upTo: 60, kw: 120 },
+      { upTo: 80, kw: 70 },
+      { upTo: 90, kw: 35 },
+      { upTo: 100, kw: 15 },
+    ]),
+  }),
+  vehMeasured({
     id: "byd-seal-performance-awd-2024",
     make: "BYD",
     model: "Seal",
@@ -84,8 +145,15 @@ const BYD: EvVehicle[] = [
     dcMaxPowerKW: 150,
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
-    idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(150, "teslaLfp"),
+    idleOverheadKW: 0.5,
+    // Same pack/BMS as Premium RWD (AWD adds a second drive motor, not charging hardware).
+    dcChargingCurve: stepCurve([
+      { upTo: 55, kw: 150 },
+      { upTo: 60, kw: 120 },
+      { upTo: 80, kw: 70 },
+      { upTo: 90, kw: 35 },
+      { upTo: 100, kw: 15 },
+    ]),
   }),
   veh({
     id: "byd-sealu-2024",
@@ -101,7 +169,8 @@ const BYD: EvVehicle[] = [
     idleOverheadKW: 0.4,
     dcChargingCurve: curveFromShape(110, "teslaLfp"),
   }),
-  veh({
+  // Shares the same 150kW DC hardware/BMS as Premium RWD and Performance AWD.
+  vehMeasured({
     id: "byd-sealion7-dynamic-2025",
     make: "BYD",
     model: "Sealion 7",
@@ -113,14 +182,14 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(150, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 65, kw: 150 },
+      { upTo: 85, kw: 80 },
+      { upTo: 99, kw: 45 },
+      { upTo: 100, kw: 22.5 },
+    ]),
   }),
-  // Measured step curve (not the generic shape helper) from published charging tests:
-  // holds 150kW to 65%, steps down to 80kW (65-85%), 45kW (85-99%), 22.5kW to full.
-  // Each repeated SOC value is a deliberate vertical step, not a data-entry duplicate —
-  // interpolateCurve() resolves a query at the exact boundary to the earlier (higher)
-  // segment, so e.g. 65.0% still reads 150kW and anything just above it reads 80kW.
-  {
+  vehMeasured({
     id: "byd-sealion7-premium-2025",
     make: "BYD",
     model: "Sealion 7",
@@ -132,20 +201,14 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: [
-      { soc: 0, kw: 150 },
-      { soc: 65, kw: 150 },
-      { soc: 65, kw: 80 },
-      { soc: 85, kw: 80 },
-      { soc: 85, kw: 45 },
-      { soc: 99, kw: 45 },
-      { soc: 99, kw: 22.5 },
-      { soc: 100, kw: 22.5 },
-    ],
-    lastUpdated: LAST_UPDATED,
-    source: "Published charging-curve test data (measured step curve, not the generic shape approximation)",
-  },
-  veh({
+    dcChargingCurve: stepCurve([
+      { upTo: 65, kw: 150 },
+      { upTo: 85, kw: 80 },
+      { upTo: 99, kw: 45 },
+      { upTo: 100, kw: 22.5 },
+    ]),
+  }),
+  vehMeasured({
     id: "byd-sealion7-performance-2025",
     make: "BYD",
     model: "Sealion 7",
@@ -157,7 +220,12 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.5,
-    dcChargingCurve: curveFromShape(150, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 65, kw: 150 },
+      { upTo: 85, kw: 80 },
+      { upTo: 99, kw: 45 },
+      { upTo: 100, kw: 22.5 },
+    ]),
   }),
   veh({
     id: "byd-songplus-2024",

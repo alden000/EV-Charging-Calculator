@@ -1,9 +1,14 @@
-import { curveFromShape, veh } from "./helpers";
+import { curveFromShape, stepCurve, veh, vehMeasured } from "./helpers";
 import type { EvVehicle } from "../types";
 
 // Hyundai — E-GMP 800V platform (Ioniq 5/6) charges very fast; Kona Electric is conventional 400V.
+//
+// Measured curve (InsideEVs IONITY test analysis, Ioniq 5 Long Range 800V): the E-GMP
+// platform's signature "mid-range peak" — 191-197kW from 10-24%, jumps to a 236kW peak
+// around 50%, drops sharply to ~204kW at 51%, tapers to 112kW by 80%, averages ~50kW
+// from 81-99%. Ioniq 6/EV6 share the same 800V platform; other trims scaled by DC cap.
 const HYUNDAI: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "hyundai-ioniq5-sr-2024",
     make: "Hyundai",
     model: "Ioniq 5",
@@ -15,9 +20,17 @@ const HYUNDAI: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(175, "flat800v"),
+    // Scaled from the Long Range's measured curve by its lower 175kW (vs 235kW) cap.
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 145 },
+      { upTo: 51, kw: 173 },
+      { upTo: 65, kw: 134 },
+      { upTo: 80, kw: 97 },
+      { upTo: 99, kw: 37 },
+      { upTo: 100, kw: 19 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "hyundai-ioniq5-2024",
     make: "Hyundai",
     model: "Ioniq 5",
@@ -29,9 +42,16 @@ const HYUNDAI: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(235, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 195 },
+      { upTo: 51, kw: 232 },
+      { upTo: 65, kw: 180 },
+      { upTo: 80, kw: 130 },
+      { upTo: 99, kw: 50 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "hyundai-ioniq6-sr-2024",
     make: "Hyundai",
     model: "Ioniq 6",
@@ -43,9 +63,16 @@ const HYUNDAI: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.28,
-    dcChargingCurve: curveFromShape(111, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 92 },
+      { upTo: 51, kw: 110 },
+      { upTo: 65, kw: 85 },
+      { upTo: 80, kw: 61 },
+      { upTo: 99, kw: 24 },
+      { upTo: 100, kw: 12 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "hyundai-ioniq6-2024",
     make: "Hyundai",
     model: "Ioniq 6",
@@ -57,7 +84,14 @@ const HYUNDAI: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(240, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 199 },
+      { upTo: 51, kw: 237 },
+      { upTo: 65, kw: 184 },
+      { upTo: 80, kw: 133 },
+      { upTo: 99, kw: 51 },
+      { upTo: 100, kw: 26 },
+    ]),
   }),
   veh({
     id: "hyundai-kona-ev-sr-2024",
@@ -90,8 +124,10 @@ const HYUNDAI: EvVehicle[] = [
 ];
 
 // Kia — shares E-GMP 800V platform with Hyundai on EV6/EV9/EV3 (EV3 is 400V for the smaller packs).
+// EV6 shares its charging hardware/BMS with the Ioniq 5, so trims reuse that measured curve,
+// scaled by DC power cap.
 const KIA: EvVehicle[] = [
-  veh({
+  vehMeasured({
     id: "kia-ev6-sr-2024",
     make: "Kia",
     model: "EV6",
@@ -103,9 +139,16 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.3,
-    dcChargingCurve: curveFromShape(175, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 145 },
+      { upTo: 51, kw: 173 },
+      { upTo: 65, kw: 134 },
+      { upTo: 80, kw: 97 },
+      { upTo: 99, kw: 37 },
+      { upTo: 100, kw: 19 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "kia-ev6-2024",
     make: "Kia",
     model: "EV6",
@@ -117,9 +160,16 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.35,
-    dcChargingCurve: curveFromShape(235, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 195 },
+      { upTo: 51, kw: 232 },
+      { upTo: 65, kw: 180 },
+      { upTo: 80, kw: 130 },
+      { upTo: 99, kw: 50 },
+      { upTo: 100, kw: 25 },
+    ]),
   }),
-  veh({
+  vehMeasured({
     id: "kia-ev6-gt-2024",
     make: "Kia",
     model: "EV6",
@@ -131,7 +181,14 @@ const KIA: EvVehicle[] = [
     acEfficiency: 0.89,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(258, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 24, kw: 214 },
+      { upTo: 51, kw: 255 },
+      { upTo: 65, kw: 198 },
+      { upTo: 80, kw: 143 },
+      { upTo: 99, kw: 55 },
+      { upTo: 100, kw: 27 },
+    ]),
   }),
   veh({
     id: "kia-niro-ev-2023",
