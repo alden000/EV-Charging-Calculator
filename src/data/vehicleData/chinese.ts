@@ -606,6 +606,13 @@ const XPENG: EvVehicle[] = [
       { upTo: 100, kw: 35 },
     ]),
   }),
+  // No independent per-SOC breakpoint data found for this specific 70.8kWh/110kW original-generation
+  // RWD pack (evkx.net only covers the newer P7+/P7-series trims — 60.7/74.9kWh, or the 82.7kWh
+  // usable "RWD Long Range"/"AWD Performance" — none matching this battery+power combo; ev-database
+  // and other spec sources likewise only cover the newer 77.9-86.2kWh trims). Stays a shape
+  // approximation; "gradualTaper" left as-is since the closest comparable data point (P7 82.7kWh/
+  // 175kW trim: ev-database avg/peak ratio 135/175=0.77, and a Proefritten real-world test of that
+  // same trim showing a slow initial ramp then plateau then taper) is broadly consistent with it.
   veh({
     id: "xpeng-p7-rwd-2023",
     make: "XPeng",
@@ -620,19 +627,39 @@ const XPENG: EvVehicle[] = [
     idleOverheadKW: 0.4,
     dcChargingCurve: curveFromShape(110, "gradualTaper"),
   }),
-  veh({
+  // Measured (evkx.net per-1%-SOC table for the G9 "RWD Long Range"/650-702 Pro-Max, 98kWh nominal/
+  // ~93.6kWh usable NMC pack, 315kW DC cap — matches this trim's spec per Wikipedia's XPeng G9 trim
+  // table). Corroborated independently by electrive.com's 2024 real-world test of the same Long
+  // Range G9 (93.1kWh net battery): "we even saw a peak of 320 kW... continues for a while at
+  // 270 kW", "over 200 kW flowed in immediately" at 50% SOC — both match evkx's measured plateaus
+  // (317kW at 10-21%, 270kW at 24-39%, 213kW at 42-51%) almost exactly, and the evkx curve itself
+  // shows genuine discrete BMS step-plateaus (not a smooth synthetic shape), unlike the templated
+  // curves found for some other under-tested models. batteryCapacityKWh corrected to the usable
+  // (net) figure per both sources; dcMaxPowerKW corrected to the measured/spec 315kW (was 300kW).
+  vehMeasured({
     id: "xpeng-g9-2024",
     make: "XPeng",
     model: "G9",
     trim: "Long Range AWD",
     year: 2024,
-    batteryCapacityKWh: 98,
+    batteryCapacityKWh: 93.1,
     acMaxPowerKW: 11,
-    dcMaxPowerKW: 300,
+    dcMaxPowerKW: 315,
     acEfficiency: 0.9,
     dcEfficiency: 0.95,
     idleOverheadKW: 0.55,
-    dcChargingCurve: curveFromShape(300, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 8, kw: 150 },
+      { upTo: 21, kw: 315 },
+      { upTo: 39, kw: 270 },
+      { upTo: 51, kw: 213 },
+      { upTo: 60, kw: 190 },
+      { upTo: 69, kw: 173 },
+      { upTo: 81, kw: 158 },
+      { upTo: 90, kw: 80 },
+      { upTo: 96, kw: 48 },
+      { upTo: 100, kw: 24 },
+    ]),
   }),
 ];
 
@@ -660,24 +687,49 @@ const ZEEKR: EvVehicle[] = [
       { upTo: 100, kw: 25 },
     ]),
   }),
-  veh({
+  // Measured (evkx.net per-1%-SOC table for Zeekr X "Privilege AWD", same 66kWh/64kWh-usable
+  // 150kW-cap AWD powertrain shared across Zeekr X AWD trims per ultimatespecs.com — 10-80% in
+  // ~31 min matches the official "150kW DC, 10-80% in 30 min" spec almost exactly). This is a
+  // 400V platform with a smooth continuous taper (not the 800V flat-plateau-then-cliff shape
+  // this entry previously used), which independently checks out: fetching evkx's curve for the
+  // unrelated higher-power "Long Range RWD" Zeekr X trim (287kW peak, tapering below 200kW by
+  // ~40% SOC) matches a separate real-world test (thecooldown.com) almost exactly, confirming
+  // evkx's Zeekr X data is genuinely vehicle-specific rather than a templated curve.
+  // batteryCapacityKWh corrected to the usable figure (was gross 66kWh).
+  vehMeasured({
     id: "zeekr-x-2024",
     make: "Zeekr",
     model: "X",
     trim: "Core AWD",
     year: 2024,
-    batteryCapacityKWh: 66,
+    batteryCapacityKWh: 64,
     acMaxPowerKW: 11,
     dcMaxPowerKW: 150,
     acEfficiency: 0.89,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.4,
-    dcChargingCurve: curveFromShape(150, "flat800v"),
+    dcChargingCurve: stepCurve([
+      { upTo: 15, kw: 148 },
+      { upTo: 30, kw: 137 },
+      { upTo: 45, kw: 110 },
+      { upTo: 60, kw: 85 },
+      { upTo: 75, kw: 55 },
+      { upTo: 90, kw: 25 },
+      { upTo: 100, kw: 14 },
+    ]),
   }),
 ];
 
 // Wuling (budget city EV)
 const WULING: EvVehicle[] = [
+  // No evkx.net entry exists for this model (only the Hongguang Mini EV is covered) and no
+  // real per-SOC breakpoint test data was found — stays a shape approximation. But the previous
+  // "slowLegacy" shape implied far more taper than sourced data supports: Philippines/Indonesia
+  // market specs list "DC Fast Charge 30%-80% in 30 min" (visor.ph), which for this 26.7kWh pack
+  // implies ~26.7kW average over that band vs. a 30kW peak — a much flatter curve than
+  // "slowLegacy" produces. This is also consistent with the vehicle's LFP chemistry (flatter
+  // power delivery than NMC packs), so switched to "teslaLfp" instead, which better matches both
+  // the chemistry and the ~30min/30-80% aggregate figure.
   veh({
     id: "wuling-air-ev-lr-2023",
     make: "Wuling",
@@ -690,7 +742,7 @@ const WULING: EvVehicle[] = [
     acEfficiency: 0.86,
     dcEfficiency: 0.9,
     idleOverheadKW: 0.2,
-    dcChargingCurve: curveFromShape(30, "slowLegacy"),
+    dcChargingCurve: curveFromShape(30, "teslaLfp"),
   }),
 ];
 
