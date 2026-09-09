@@ -1,4 +1,4 @@
-import { curveFromShape, veh } from "./helpers";
+import { curveFromShape, veh, LAST_UPDATED } from "./helpers";
 import type { EvVehicle } from "../types";
 
 // BYD — LFP "Blade" packs on most models: flat plateau, gradual taper (teslaLfp shape approximates this well).
@@ -115,7 +115,12 @@ const BYD: EvVehicle[] = [
     idleOverheadKW: 0.4,
     dcChargingCurve: curveFromShape(150, "flat800v"),
   }),
-  veh({
+  // Measured step curve (not the generic shape helper) from published charging tests:
+  // holds 150kW to 65%, steps down to 80kW (65-85%), 45kW (85-99%), 22.5kW to full.
+  // Each repeated SOC value is a deliberate vertical step, not a data-entry duplicate —
+  // interpolateCurve() resolves a query at the exact boundary to the earlier (higher)
+  // segment, so e.g. 65.0% still reads 150kW and anything just above it reads 80kW.
+  {
     id: "byd-sealion7-premium-2025",
     make: "BYD",
     model: "Sealion 7",
@@ -127,8 +132,19 @@ const BYD: EvVehicle[] = [
     acEfficiency: 0.9,
     dcEfficiency: 0.94,
     idleOverheadKW: 0.45,
-    dcChargingCurve: curveFromShape(150, "flat800v"),
-  }),
+    dcChargingCurve: [
+      { soc: 0, kw: 150 },
+      { soc: 65, kw: 150 },
+      { soc: 65, kw: 80 },
+      { soc: 85, kw: 80 },
+      { soc: 85, kw: 45 },
+      { soc: 99, kw: 45 },
+      { soc: 99, kw: 22.5 },
+      { soc: 100, kw: 22.5 },
+    ],
+    lastUpdated: LAST_UPDATED,
+    source: "Published charging-curve test data (measured step curve, not the generic shape approximation)",
+  },
   veh({
     id: "byd-sealion7-performance-2025",
     make: "BYD",

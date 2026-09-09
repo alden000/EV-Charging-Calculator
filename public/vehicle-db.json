@@ -505,51 +505,39 @@
       "dcChargingCurve": [
         {
           "soc": 0,
-          "kw": 82.5
-        },
-        {
-          "soc": 10,
-          "kw": 142.5
-        },
-        {
-          "soc": 20,
           "kw": 150
         },
         {
-          "soc": 30,
+          "soc": 65,
           "kw": 150
         },
         {
-          "soc": 40,
-          "kw": 150
+          "soc": 65,
+          "kw": 80
         },
         {
-          "soc": 50,
-          "kw": 142.5
+          "soc": 85,
+          "kw": 80
         },
         {
-          "soc": 60,
-          "kw": 127.5
+          "soc": 85,
+          "kw": 45
         },
         {
-          "soc": 70,
-          "kw": 105
+          "soc": 99,
+          "kw": 45
         },
         {
-          "soc": 80,
-          "kw": 75
-        },
-        {
-          "soc": 90,
-          "kw": 52.5
+          "soc": 99,
+          "kw": 22.5
         },
         {
           "soc": 100,
-          "kw": 30
+          "kw": 22.5
         }
       ],
       "lastUpdated": "2026-09-09",
-      "source": "Manufacturer specs & public charging-curve tests (approximate; verify before relying on it)"
+      "source": "Published charging-curve test data (measured step curve, not the generic shape approximation)"
     },
     {
       "id": "byd-sealion7-performance-2025",
